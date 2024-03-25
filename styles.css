@@ -1,0 +1,63 @@
+/*
+ * Custom CSS
+ */
+
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+
+.main-carousel {
+  height: 50vh;
+}
+
+.main-img {
+  translate: 0 -25%;
+}
+
+.no-border {
+  border: 0;
+}
+
+.mt-5vh {
+  margin-top: 5vh;
+}
+
+.main-text {
+  margin: 0;
+  text-indent: 3rem;
+  text-align: justify;
+}
+
+.btn-custom {
+  background-color: #d1680d;
+}
+
+.color-dark {
+  color: #522702;
+}
+
+.color-white {
+  color: white;
+}
+
+.our-service {
+  background-image: url("./images/pattern.svg");
+  /* Full height */
+  /* height: 100%; */
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.py-10 {
+  padding-top: 5vh;
+  padding-bottom: 10vh;
+}
+
+.carousel-caption {
+  padding-bottom: 15vh;
+  padding-left: 20vh;
+}
