@@ -1,15 +1,13 @@
-# Bootstrap starter
+## NODE.JS
 
-Include [Bootstrap](https://getbootstrap.com) CSS and JS via the [jsDelivr CDN](https://www.jsdelivr.com/package/npm/bootstrap).
+- Node 16.x || 18.x
 
-## Edit in browser
+## USING YARN (Recommend)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/twbs/examples/tree/main/starter?file=index.html)
+- yarn install
+- yarn dev
 
-## Download
+## USING NPM
 
-```sh
-git clone https://github.com/twbs/examples.git
-cd examples/starter/
-open index.html
-```
+- npm i OR npm i --legacy-peer-deps
+- npm run dev
