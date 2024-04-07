@@ -18,9 +18,6 @@ import Carousel, {
   CarouselArrowIndex,
 } from "src/components/carousel";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 // ----------------------------------------------------------------------
 
 export default function CarouselAnimation({ data }) {
@@ -30,7 +27,7 @@ export default function CarouselAnimation({ data }) {
   });
 
   return (
-    <Card>
+    <Card sx={{ border: 0, borderRadius: 0 }}>
       <Carousel ref={carousel.carouselRef} {...carousel.carouselSettings}>
         {data.map((item, index) => (
           <CarouselItem
@@ -88,29 +85,29 @@ function CarouselItem({ item, active }) {
         animate={active}
         action
         sx={{
-          left: 300,
-          top: 200,
-          maxWidth: 720,
+          left: "18%",
+          top: "25%",
+          maxWidth: 540,
           textAlign: "left",
           position: "absolute",
-          color: "common.white",
+          color: "common.black",
         }}
       >
         <m.div variants={variants}>
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h2" fontWeight={"bold"} gutterBottom>
             {item.title}
           </Typography>
         </m.div>
 
         <m.div variants={variants}>
-          <Typography variant="body2" noWrap gutterBottom>
+          <Typography variant="body2" gutterBottom>
             {item.description}
           </Typography>
         </m.div>
 
         <m.div variants={variants}>
-          <Button variant="contained" sx={{ mt: 3 }}>
-            View More
+          <Button variant="contained" sx={{ mt: 3, px: 8, py: 1 }}>
+            Дэлгэрэнгүй
           </Button>
         </m.div>
       </CardContent>

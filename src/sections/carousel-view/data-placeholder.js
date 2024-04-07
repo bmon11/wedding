@@ -1,17 +1,15 @@
 const dataPlaceholder = [
   {
     id: 0,
-    title: "Монголын шатрын аварга шалгаруулах тэмцээнд Хааны гамбит түрүүлэв",
-    coverUrl:
-      "https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "ХУРИМЫН ЛИЗИНГ",
+    coverUrl: "/assets/images/home/services/main_bg_1.jpg",
     description:
       'In a thrilling display of strategic brilliance, the recent Mongolian Chess Championship witnessed the rise of a new chess prodigy, as Grandmaster Enkhbold "Khaan" Amarbold executed a series of daring moves that left spectators in awe',
   },
   {
     id: 1,
-    title: "Талын Шатар: Монголд мартагдашгүй шатрын тэмцээн болж байна",
-    coverUrl:
-      "https://images.pexels.com/photos/4973821/pexels-photo-4973821.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "ХУРИМЫН ЛИЗИНГ",
+    coverUrl: "/assets/images/home/services/main_bg_2.jpg",
     description:
       "The Mongolian chess scene dazzled spectators as top contenders clashed in a fierce battle of wits. The tournament showcased brilliant strategic moves and unexpected victories, leaving chess enthusiasts on the edge of their seats.",
   },

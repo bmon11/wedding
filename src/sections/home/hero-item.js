@@ -1,9 +1,11 @@
 import CarouselAnimation from "../carousel-view/carousel-animation";
 import { dataPlaceholder } from "../carousel-view/data-placeholder";
 
-// Placeholder
-
 export default function HeroItem(params) {
-  // return <>haha</>;
-  return <CarouselAnimation data={dataPlaceholder.slice(4, 8)} />;
+  return (
+    <CarouselAnimation
+      sx={{ borderRarius: 0, border: 5, borderColor: "error.main" }}
+      data={dataPlaceholder.slice(0, 2)}
+    />
+  );
 }

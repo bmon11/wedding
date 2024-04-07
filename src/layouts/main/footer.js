@@ -21,23 +21,26 @@ import Iconify from "src/components/iconify";
 
 const LINKS = [
   {
-    headline: "Minimal",
+    headline: "Хаяг",
     children: [
-      { name: "About us", href: paths.about },
-      { name: "Contact us", href: paths.contact },
-      { name: "FAQs", href: paths.faqs },
+      {
+        name: "УБ хот,ЧД, 1-р хороо, Шангрилла оффис, 15 давхар",
+        href: paths.about,
+      },
+      // { name: "Contact us", href: paths.contact },
+      // { name: "FAQs", href: paths.faqs },
     ],
   },
   {
-    headline: "Legal",
+    headline: "Цахим хаяг",
     children: [
-      { name: "Terms and Condition", href: "#" },
+      // { name: "Terms and Condition", href: "#" },
       { name: "Privacy Policy", href: "#" },
     ],
   },
   {
-    headline: "Contact",
-    children: [{ name: "support@minimals.cc", href: "#" }],
+    headline: "Утас",
+    children: [{ name: "(+976)77777777", href: "#" }],
   },
 ];
 
@@ -62,9 +65,7 @@ export default function Footer() {
         <Logo sx={{ mb: 1, mx: "auto" }} />
 
         <Typography variant="caption" component="div">
-          © All rights reserved
-          <br /> made by
-          <Link href="https://minimals.cc/"> minimals.cc </Link>
+          © 2024 Хуримын ордон ХХК, Бүх эрх хуулиар хамгаалагдсан
         </Typography>
       </Container>
     </Box>
@@ -109,7 +110,7 @@ export default function Footer() {
               customized to your style.
             </Typography>
 
-            <Stack
+            {/* <Stack
               direction="row"
               justifyContent={{ xs: "center", md: "flex-start" }}
               sx={{
@@ -129,7 +130,7 @@ export default function Footer() {
                   <Iconify color={social.color} icon={social.icon} />
                 </IconButton>
               ))}
-            </Stack>
+            </Stack> */}
           </Grid>
 
           <Grid xs={12} md={6}>
@@ -163,7 +164,7 @@ export default function Footer() {
         </Grid>
 
         <Typography variant="body2" sx={{ mt: 10 }}>
-          © 2021. All rights reserved
+          © 2024 Хуримын ордон ХХК, Бүх эрх хуулиар хамгаалагдсан
         </Typography>
       </Container>
     </Box>
