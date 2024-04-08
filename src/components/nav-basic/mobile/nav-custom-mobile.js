@@ -14,7 +14,7 @@ import NavList from "./nav-list";
 
 // ----------------------------------------------------------------------
 
-export default function NavMobile({ data }) {
+export default function NavCustomMobile({ data }) {
   const pathname = usePathname();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -54,6 +54,13 @@ export default function NavMobile({ data }) {
           <Logo sx={{ mx: 2.5, my: 3 }} />
 
           {data.map((list) => (
+            // <NavList
+            //   key={list.title}
+            //   data={list}
+            //   depth={1}
+            //   slotProps={slotProps}
+            // />
+
             <NavList key={list.title} data={list} />
           ))}
         </Scrollbar>
@@ -62,6 +69,6 @@ export default function NavMobile({ data }) {
   );
 }
 
-NavMobile.propTypes = {
+NavCustomMobile.propTypes = {
   data: PropTypes.array,
 };
