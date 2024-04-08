@@ -22,12 +22,14 @@ import NavMobile from "./nav/mobile";
 import NavDesktop from "./nav/desktop";
 import { HEADER } from "../config-layout";
 import { navConfig } from "./config-navigation";
-import LoginButton from "../common/login-button";
+// import LoginButton from "../common/login-button";
 import HeaderShadow from "../common/header-shadow";
-import SettingsButton from "../common/settings-button";
-import NavigationBarView from "src/sections/navbar-view.js/navigation-bar-view";
+// import SettingsButton from "../common/settings-button";
+// import NavigationBarView from "src/sections/navbar-view.js/navigation-bar-view";
 import { NavBasicMobile, NavBasicDesktop } from "src/components/nav-basic";
 import NavCustomMobile from "src/components/nav-basic/mobile/nav-custom-mobile";
+import { grey } from "src/theme/palette";
+import Typography from "@mui/material/Typography";
 
 // ----------------------------------------------------------------------
 
@@ -108,11 +110,43 @@ export default function Header() {
         { title: "Page 3", path: "#" },
       ],
     },
-    { title: "Мэдээлэл", path: "#" },
-    { title: "Blog", path: "#" },
-    { title: "About", path: "#" },
-    { title: "Contact", path: "#" },
-    { title: "External", path: "https://www.google.com/" },
+    { title: "МЭДЭЭЛЭЛ", path: "#" },
+    {
+      title: "ИЛ ТОД БАЙДАЛ",
+      path: "#",
+      caption: "This is the caption",
+      children: [
+        {
+          title: "Page 1",
+          path: "#",
+          caption: "This is the caption",
+          children: [
+            { title: "Page 1.1", path: "#" },
+            { title: "Page 1.2", path: "#" },
+          ],
+        },
+        {
+          title: "Page 2",
+          path: "#",
+          children: [
+            { title: "Page 2.1", path: "#" },
+            { title: "Page 2.2", path: "#" },
+            {
+              title: "Page 2.3",
+              path: "#",
+              children: [
+                { title: "Page 2.3.1", path: "#" },
+                { title: "Page 2.3.2", path: "#" },
+                { title: "Page 2.3.3", path: "#" },
+              ],
+            },
+          ],
+        },
+        { title: "Page 3", path: "#" },
+      ],
+    },
+    { title: "ХОЛБОО БАРИХ", path: "#" },
+    // { title: "External", path: "https://www.google.com/" }
   ];
 
   return (
@@ -236,12 +270,26 @@ export default function Header() {
                 underline="none"
                 sx={{ ml: 1 }}
               >
-                <Label
-                  color="info"
-                  sx={{ textTransform: "unset", height: 22, px: 0.5 }}
+                {/* <Label sx={{ textTransform: "unset", height: 22, px: 0.5 }}>
+                  Гэрлэх Ёслолын Ордон
+                </Label> */}
+                <Typography
+                  color={grey[800]}
+                  fontWeight={"bold"}
+                  fontSize={12}
+                  noWrap
+                  sx={{
+                    textTransform: "unset",
+                    // translate: 40,
+                    marginLeft: 10,
+                    px: 0.5,
+                    mt: 6,
+                  }}
+                  textAlign={"center"}
                 >
-                  v5.7.0
-                </Label>
+                  ГЭРЛЭХ ЁСЛОЛЫН <br />
+                  ОРДОН
+                </Typography>
               </Link>
             }
           >
@@ -261,18 +309,19 @@ export default function Header() {
               target="_blank"
               rel="noopener"
               href={paths.minimalUI}
+              sx={{ ml: 5, px: 2 }}
             >
-              Purchase Now
+              ЗАХИАЛГА ӨГӨХ
             </Button>
 
-            {mdUp && <LoginButton />}
+            {/* {mdUp && <LoginButton />} */}
 
-            <SettingsButton
+            {/* <SettingsButton
               sx={{
                 ml: { xs: 1, md: 0 },
                 mr: { md: 2 },
               }}
-            />
+            /> */}
             {!mdUp && <NavCustomMobile data={BASIC_NAV_ITEMS} />}
           </Stack>
         </Container>

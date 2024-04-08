@@ -1,19 +1,34 @@
-import PropTypes from 'prop-types';
-import { forwardRef } from 'react';
+import PropTypes from "prop-types";
+import { forwardRef } from "react";
 
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import { styled } from '@mui/material/styles';
-import ListItemButton from '@mui/material/ListItemButton';
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import { styled } from "@mui/material/styles";
+import ListItemButton from "@mui/material/ListItemButton";
 
-import { RouterLink } from 'src/routes/components';
+import { RouterLink } from "src/routes/components";
 
-import Iconify from '../../iconify';
+import Iconify from "../../iconify";
+import Typography from "@mui/material/Typography";
 
 // ----------------------------------------------------------------------
 
 const NavItem = forwardRef(
-  ({ title, path, icon, caption, depth, open, active, hasChild, externalLink, ...other }, ref) => {
+  (
+    {
+      title,
+      path,
+      icon,
+      caption,
+      depth,
+      open,
+      active,
+      hasChild,
+      externalLink,
+      ...other
+    },
+    ref
+  ) => {
     const subItem = depth !== 1;
 
     const renderContent = (
@@ -35,7 +50,9 @@ const NavItem = forwardRef(
         <Box component="span" className="text-container">
           {title && (
             <Box component="span" className="label">
-              {title}
+              <Typography fontSize={"small"} fontWeight={"medium"}>
+                {title}
+              </Typography>
             </Box>
           )}
 
@@ -50,7 +67,11 @@ const NavItem = forwardRef(
           <Iconify
             width={16}
             className="arrow"
-            icon={subItem ? 'eva:arrow-ios-forward-fill' : 'eva:arrow-ios-downward-fill'}
+            icon={
+              subItem
+                ? "eva:arrow-ios-forward-fill"
+                : "eva:arrow-ios-downward-fill"
+            }
           />
         )}
       </StyledNavItem>
@@ -58,7 +79,13 @@ const NavItem = forwardRef(
 
     if (externalLink)
       return (
-        <Link href={path} target="_blank" rel="noopener" color="inherit" underline="none">
+        <Link
+          href={path}
+          target="_blank"
+          rel="noopener"
+          color="inherit"
+          underline="none"
+        >
           {renderContent}
         </Link>
       );
@@ -88,7 +115,7 @@ export default NavItem;
 // ----------------------------------------------------------------------
 
 const StyledNavItem = styled(ListItemButton, {
-  shouldForwardProp: (prop) => prop !== 'active',
+  shouldForwardProp: (prop) => prop !== "active",
 })(({ active, open, depth, theme }) => {
   const subItem = depth !== 1;
 
@@ -107,8 +134,8 @@ const StyledNavItem = styled(ListItemButton, {
     },
     textContainer: {
       flexGrow: 1,
-      display: 'inline-flex',
-      flexDirection: 'column',
+      display: "inline-flex",
+      flexDirection: "column",
     },
     label: {
       flexGrow: 1,
@@ -129,26 +156,26 @@ const StyledNavItem = styled(ListItemButton, {
       ...baseStyles.item,
       padding: 0,
       minHeight: 40,
-      transition: theme.transitions.create(['all'], {
+      transition: theme.transitions.create(["all"], {
         duration: theme.transitions.duration.shorter,
       }),
-      '&:hover': {
-        backgroundColor: 'transparent',
+      "&:hover": {
+        backgroundColor: "transparent",
       },
-      '& .icon': {
+      "& .icon": {
         ...baseStyles.icon,
       },
-      '& .text-container': {
+      "& .text-container": {
         ...baseStyles.textContainer,
       },
-      '& .label': {
+      "& .label": {
         ...baseStyles.label,
       },
-      '& .caption': {
+      "& .caption": {
         ...baseStyles.caption,
-        display: 'none',
+        display: "none",
       },
-      '& .arrow': {
+      "& .arrow": {
         ...baseStyles.arrow,
       },
       ...(active && {
@@ -167,19 +194,19 @@ const StyledNavItem = styled(ListItemButton, {
       borderRadius: 6,
       padding: theme.spacing(0.75, 1),
       color: theme.palette.text.secondary,
-      '& .icon': {
+      "& .icon": {
         ...baseStyles.icon,
       },
-      '& .text-container': {
+      "& .text-container": {
         ...baseStyles.textContainer,
       },
-      '& .label': {
+      "& .label": {
         ...baseStyles.label,
       },
-      '& .caption': {
+      "& .caption": {
         ...baseStyles.caption,
       },
-      '& .arrow': {
+      "& .arrow": {
         ...baseStyles.arrow,
         marginRight: theme.spacing(-0.5),
       },

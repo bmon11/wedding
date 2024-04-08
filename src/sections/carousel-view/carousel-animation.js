@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import { alpha, useTheme } from "@mui/material/styles";
 
-import { bgGradient } from "src/theme/css";
+import { grey } from "src/theme/palette";
 
 import Image from "src/components/image";
 import { varFade, MotionContainer } from "src/components/animate";
@@ -17,6 +17,10 @@ import Carousel, {
   useCarousel,
   CarouselArrowIndex,
 } from "src/components/carousel";
+import { delay } from "lodash";
+
+// import { bgGradient } from "src/theme/css";
+import { Great_Vibes } from "next/font/google";
 
 // ----------------------------------------------------------------------
 
@@ -94,13 +98,25 @@ function CarouselItem({ item, active }) {
         }}
       >
         <m.div variants={variants}>
-          <Typography variant="h2" fontWeight={"bold"} gutterBottom>
+          <Typography
+            variant="h2"
+            fontWeight={"bold"}
+            color={grey[900]}
+            maxWidth={300}
+            gutterBottom
+          >
             {item.title}
           </Typography>
         </m.div>
 
         <m.div variants={variants}>
-          <Typography variant="body2" gutterBottom>
+          <Typography
+            variant="body2"
+            gutterBottom
+            color={grey[800]}
+            maxWidth={400}
+            textAlign={"justify"}
+          >
             {item.description}
           </Typography>
         </m.div>
