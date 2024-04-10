@@ -254,47 +254,35 @@ export default function Header() {
           }),
         }}
       >
-        <Container sx={{ height: 1, display: "flex", alignItems: "center" }}>
-          <Badge
-            sx={{
-              [`& .${badgeClasses.badge}`]: {
-                top: 8,
-                right: -16,
-              },
-            }}
-            badgeContent={
-              <Link
-                href={paths.changelog}
-                target="_blank"
-                rel="noopener"
-                underline="none"
-                sx={{ ml: 1 }}
-              >
-                {/* <Label sx={{ textTransform: "unset", height: 22, px: 0.5 }}>
-                  Гэрлэх Ёслолын Ордон
-                </Label> */}
-                <Typography
-                  color={grey[800]}
-                  fontWeight={"bold"}
-                  fontSize={12}
-                  noWrap
-                  sx={{
-                    textTransform: "unset",
-                    // translate: 40,
-                    marginLeft: 10,
-                    px: 0.5,
-                    mt: 6,
-                  }}
-                  textAlign={"center"}
-                >
-                  ГЭРЛЭХ ЁСЛОЛЫН <br />
-                  ОРДОН
-                </Typography>
-              </Link>
-            }
-          >
-            <Logo />
-          </Badge>
+        <Container
+          sx={{
+            height: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Stack direction={"row"}>
+            {mdUp && <Box sx={{ width: 100 }}></Box>}
+            <Badge
+              sx={{
+                [`& .${badgeClasses.badge}`]: {
+                  top: 8,
+                  right: -16,
+                },
+              }}
+              badgeContent={
+                <Link
+                  href={paths.changelog}
+                  target="_blank"
+                  rel="noopener"
+                  underline="none"
+                  sx={{ ml: 1 }}
+                ></Link>
+              }
+            >
+              <Logo />
+            </Badge>
+          </Stack>
 
           <Box sx={{ flexGrow: 1 }} />
 
