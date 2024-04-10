@@ -45,35 +45,52 @@ export default function Header() {
     {
       title: "БИДНИЙ ТУХАЙ",
       path: "#",
-      caption: "This is the caption",
+      caption: "",
       children: [
         {
-          title: "Page 1",
-          path: "#",
-          caption: "This is the caption",
-          children: [
-            { title: "Page 1.1", path: "#" },
-            { title: "Page 1.2", path: "#" },
-          ],
+          title: "Мэндчилгээ",
+          path: "/",
+          caption: "Захиралын мэндчилгээ",
+          // children: [
+          //   { title: "Page 1.1", path: "#" },
+          //   { title: "Page 1.2", path: "#" },
+          // ],
         },
         {
-          title: "Page 2",
+          title: "Баг хамт олон",
+          caption: "Баг хамт олоны танилцуулга",
           path: "#",
-          children: [
-            { title: "Page 2.1", path: "#" },
-            { title: "Page 2.2", path: "#" },
-            {
-              title: "Page 2.3",
-              path: "#",
-              children: [
-                { title: "Page 2.3.1", path: "#" },
-                { title: "Page 2.3.2", path: "#" },
-                { title: "Page 2.3.3", path: "#" },
-              ],
-            },
-          ],
+          // children: [
+          //   { title: "Page 2.1", path: "#" },
+          //   { title: "Page 2.2", path: "#" },
+          //   {
+          //     title: "Page 2.3",
+          //     path: "#",
+          //     children: [
+          //       { title: "Page 2.3.1", path: "#" },
+          //       { title: "Page 2.3.2", path: "#" },
+          //       { title: "Page 2.3.3", path: "#" },
+          //     ],
+          //   },
+          // ],
         },
-        { title: "Page 3", path: "#" },
+        {
+          title: "Зорилго зорилт",
+          caption:
+            "Алсын хараа, Эрхэм зорилго, Үнэт зүйл, Үйл ажиллагааны чиглэл",
+          path: "#",
+        },
+        {
+          title: "Танилцуулга",
+          caption: "Гэрлэх ёслолын ордны танилцуулга",
+          path: "#",
+        },
+        {
+          title: "Бүтэц зохион байгуулалт",
+          caption:
+            "Гэрлэх ёслолын ордны алба хэлтсийн бүтэц зохион байгуулалтын бүдүүвч зургаар",
+          path: "#",
+        },
       ],
     },
     {
@@ -82,70 +99,145 @@ export default function Header() {
       caption: "This is the caption",
       children: [
         {
-          title: "Page 1",
-          path: "#",
+          title: "Манай үйлчилгээ",
+          path: "/",
           caption: "This is the caption",
-          children: [
-            { title: "Page 1.1", path: "#" },
-            { title: "Page 1.2", path: "#" },
-          ],
+          // children: [
+          //   { title: "Page 1.1", path: "#" },
+          //   { title: "Page 1.2", path: "#" },
+          // ],
         },
         {
-          title: "Page 2",
+          title: "Фото, видео",
           path: "#",
-          children: [
-            { title: "Page 2.1", path: "#" },
-            { title: "Page 2.2", path: "#" },
-            {
-              title: "Page 2.3",
-              path: "#",
-              children: [
-                { title: "Page 2.3.1", path: "#" },
-                { title: "Page 2.3.2", path: "#" },
-                { title: "Page 2.3.3", path: "#" },
-              ],
-            },
-          ],
+          caption: "This is the caption",
+          // children: [
+          //   { title: "Page 2.1", path: "#" },
+          //   { title: "Page 2.2", path: "#" },
+          //   {
+          //     title: "Page 2.3",
+          //     path: "#",
+          //     children: [
+          //       { title: "Page 2.3.1", path: "#" },
+          //       { title: "Page 2.3.2", path: "#" },
+          //       { title: "Page 2.3.3", path: "#" },
+          //     ],
+          //   },
+          // ],
         },
-        { title: "Page 3", path: "#" },
+        { title: "Чимэглэл", path: "#", caption: "This is the caption" },
+        {
+          title: "Түрээсийн үйлчилгээ",
+          path: "#",
+          caption: "This is the caption",
+        },
       ],
     },
-    { title: "МЭДЭЭЛЭЛ", path: "#" },
+    {
+      title: "МЭДЭЭЛЭЛ",
+      path: "#",
+      caption: "This is the caption",
+      children: [
+        {
+          title: "Эмэгтэйчүүд",
+          path: "#",
+          caption: "This is the caption",
+          // children: [
+          //   { title: "Page 1.1", path: "#" },
+          //   { title: "Page 1.2", path: "#" },
+          // ],
+        },
+        {
+          title: "Эрчүүд",
+          path: "#",
+          // children: [
+          //   { title: "Page 2.1", path: "#" },
+          //   { title: "Page 2.2", path: "#" },
+          //   {
+          //     title: "Page 2.3",
+          //     path: "#",
+          //     children: [
+          //       { title: "Page 2.3.1", path: "#" },
+          //       { title: "Page 2.3.2", path: "#" },
+          //       { title: "Page 2.3.3", path: "#" },
+          //     ],
+          //   },
+          // ],
+        },
+        { title: "Энтертайнмэнт", path: "#" },
+        { title: "Ёс заншил", path: "#" },
+      ],
+    },
     {
       title: "ИЛ ТОД БАЙДАЛ",
       path: "#",
       caption: "This is the caption",
       children: [
         {
-          title: "Page 1",
+          title: "Байгууллагын ил тод байдал",
           path: "#",
           caption: "This is the caption",
-          children: [
-            { title: "Page 1.1", path: "#" },
-            { title: "Page 1.2", path: "#" },
-          ],
+          // children: [
+          //   { title: "Page 1.1", path: "#" },
+          //   { title: "Page 1.2", path: "#" },
+          // ],
         },
         {
-          title: "Page 2",
+          title: "Санхүүгийн ил тод байдал",
           path: "#",
-          children: [
-            { title: "Page 2.1", path: "#" },
-            { title: "Page 2.2", path: "#" },
-            {
-              title: "Page 2.3",
-              path: "#",
-              children: [
-                { title: "Page 2.3.1", path: "#" },
-                { title: "Page 2.3.2", path: "#" },
-                { title: "Page 2.3.3", path: "#" },
-              ],
-            },
-          ],
+          // children: [
+          //   { title: "Page 2.1", path: "#" },
+          //   { title: "Page 2.2", path: "#" },
+          //   {
+          //     title: "Page 2.3",
+          //     path: "#",
+          //     children: [
+          //       { title: "Page 2.3.1", path: "#" },
+          //       { title: "Page 2.3.2", path: "#" },
+          //       { title: "Page 2.3.3", path: "#" },
+          //     ],
+          //   },
+          // ],
+        },
+        { title: "Хүний нөөцийн ил тод байдал", path: "#" },
+        { title: "Хууль, эрх зүй, дүрэм журам", path: "#" },
+        { title: "Өргөдөл гомдлын шийдвэрлэлт", path: "#" },
+      ],
+    },
+    {
+      title: "ХОЛБОО БАРИХ",
+      path: "#",
+      caption: "This is the caption",
+      children: [
+        {
+          title: "Захиалга өгөх",
+          path: "#",
+          caption: "This is the caption",
+          // children: [
+          //   { title: "Page 1.1", path: "#" },
+          //   { title: "Page 1.2", path: "#" },
+          // ],
+        },
+        {
+          title: "Санал хүсэлт",
+          path: "#",
+          // children: [
+          //   { title: "Page 2.1", path: "#" },
+          //   { title: "Page 2.2", path: "#" },
+          //   {
+          //     title: "Page 2.3",
+          //     path: "#",
+          //     children: [
+          //       { title: "Page 2.3.1", path: "#" },
+          //       { title: "Page 2.3.2", path: "#" },
+          //       { title: "Page 2.3.3", path: "#" },
+          //     ],
+          //   },
+          // ],
         },
         { title: "Page 3", path: "#" },
       ],
     },
-    { title: "ХОЛБОО БАРИХ", path: "#" },
     // { title: "External", path: "https://www.google.com/" }
   ];
 

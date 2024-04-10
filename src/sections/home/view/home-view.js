@@ -8,6 +8,7 @@ import HeroItem from "../hero-item";
 import ServiceItem from "../service-item";
 import GreetingItem from "../greeting-item";
 import NewsItem from "../news-item";
+import FAQItem from "../faq-item";
 
 //-------------------------------------------------------
 
@@ -18,6 +19,7 @@ export default function HomeView() {
       <ServiceItem />
       <GreetingItem />
       <NewsItem />
+      <FAQItem />
     </MainLayout>
   );
 }

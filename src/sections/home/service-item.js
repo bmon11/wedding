@@ -9,17 +9,17 @@ import Image from "src/components/image/image";
 import { serviceData } from "./data-placeholder";
 import { Butcherman } from "next/font/google";
 import { column } from "stylis";
-import { filter } from "lodash";
 
 export default function ServiceItem(params) {
   return (
     <Box
-      border={1}
       sx={{
         backgroundImage: "url('/assets/images/home/services/pattern.svg')",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "auto",
-        backgroundPosition: "0, 0",
+        // backgroundRepeat: "repeat",
+        backgroundSize: "125%",
+        backgroundPosition: "center",
+        border: 1,
+        borderColor: "#ffffff",
       }}
     >
       <Container

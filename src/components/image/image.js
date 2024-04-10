@@ -139,6 +139,7 @@ Image.propTypes = {
     "9/21",
     "1/1",
     "24/9",
+    "9/2",
   ]),
   scrollPosition: PropTypes.object,
   src: PropTypes.string,
