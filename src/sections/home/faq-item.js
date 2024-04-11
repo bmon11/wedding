@@ -45,7 +45,7 @@ export default function FAQItem() {
       </Typography>
 
       {_accordions.map((accordion, index) => (
-        <Accordion key={accordion.value}>
+        <Accordion key={index}>
           <AccordionSummary
             expandIcon={<Iconify icon="eva:arrow-ios-downward-fill" />}
           >
