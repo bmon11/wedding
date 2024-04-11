@@ -27,8 +27,12 @@ import FormProvider, { RHFTextField } from 'src/components/hook-form';
 
 // ----------------------------------------------------------------------
 
-export default function JwtRegisterView() {
-  const { register } = useAuthContext();
+export default async function JwtRegisterView() {
+  const { register } = await fetch('/user', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ name, email, password}),
+  })
 
   const router = useRouter();
 
@@ -41,15 +45,13 @@ export default function JwtRegisterView() {
   const password = useBoolean();
 
   const RegisterSchema = Yup.object().shape({
-    firstName: Yup.string().required('First name required'),
-    lastName: Yup.string().required('Last name required'),
+    name: Yup.string().required('Name required'),
     email: Yup.string().required('Email is required').email('Email must be a valid email address'),
     password: Yup.string().required('Password is required'),
   });
 
   const defaultValues = {
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
     password: '',
   };
@@ -67,7 +69,7 @@ export default function JwtRegisterView() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await register?.(data.email, data.password, data.firstName, data.lastName);
+      await register?.(data.name, data.email, data.password);
 
       router.push(returnTo || PATH_AFTER_LOGIN);
     } catch (error) {
@@ -116,8 +118,7 @@ export default function JwtRegisterView() {
   const renderForm = (
     <Stack spacing={2.5}>
       <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-        <RHFTextField name="firstName" label="First name" />
-        <RHFTextField name="lastName" label="Last name" />
+        <RHFTextField name="name" label="Name" />
       </Stack>
 
       <RHFTextField name="email" label="Email address" />
