@@ -125,7 +125,11 @@ export default function Header() {
           //   },
           // ],
         },
-        { title: "Чимэглэл", path: "#", caption: "This is the caption" },
+        {
+          title: "Чимэглэл",
+          path: "/service/decoration",
+          caption: "This is the caption",
+        },
         {
           title: "Түрээсийн үйлчилгээ",
           path: "#",
@@ -135,7 +139,7 @@ export default function Header() {
     },
     {
       title: "МЭДЭЭЛЭЛ",
-      path: "#",
+      path: "/news",
       caption: "This is the caption",
       children: [
         {

@@ -2,13 +2,21 @@ import Image from "./image";
 import Typography from "@mui/material/Typography";
 import { useResponsive } from "src/hooks/use-responsive";
 import CardContent from "@mui/material/CardContent";
-
+// import { Box } from "@mui/material";
+// import { bgGradient } from "src/theme/css";
+// import { alpha, useTheme } from "@mui/material/styles";
 export default function HeroImage({ imgURL, title, description }) {
   const mdUp = useResponsive("up", "md");
 
   return (
     <>
-      {mdUp && <Image src={imgURL} ratio={"9/2"} />}
+      {mdUp && (
+        <Image src={imgURL} ratio={"9/2"}>
+          <Typography color={"white"} sx={{}}>
+            үйлчилгээ
+          </Typography>
+        </Image>
+      )}
       {!mdUp && <Image src={imgURL} ratio={"4/3"} />}
       {mdUp && (
         <CardContent
@@ -21,7 +29,11 @@ export default function HeroImage({ imgURL, title, description }) {
             color: "common.black",
           }}
         >
-          <Typography variant="h2" color={"common.white"}>
+          <Typography
+            color={"common.white"}
+            fontSize={"3rem"}
+            fontWeight={"bold"}
+          >
             {title}
           </Typography>
           <Typography color={"common.white"}>{description}</Typography>
@@ -42,7 +54,9 @@ export default function HeroImage({ imgURL, title, description }) {
           <Typography variant="h2" color={"common.white"}>
             {title}
           </Typography>
-          <Typography color={"common.white"}>{description}</Typography>
+          <Typography color={"common.white"}>
+            {description.slice(0, 75) + "..."}
+          </Typography>
         </CardContent>
       )}
     </>

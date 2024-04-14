@@ -1,27 +1,23 @@
 "use client";
 import MainLayout from "src/layouts/main";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import Grid from "@mui/material/Grid";
-import HorizontalNewsCard from "src/components/news-card/horizontal-news-card";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Button from "@mui/material/Button";
-import Image from "src/components/image/image";
-
 import HeroImage from "src/components/image/hero-image";
+import {
+  Container,
+  Grid,
+  Stack,
+  Box,
+  List,
+  ListItem,
+  Typography,
+  Button,
+} from "@mui/material";
+import Image from "src/components/image/image";
+import data from "./data-placeholder";
 import { useResponsive } from "src/hooks/use-responsive";
-// Section for main image
-// Main section 2/3 of page is a column of main news, on right banner, types,
-import data from "src/sections/individual-news/data-placeholder";
 
-export default function NewsView(params) {
+export default function IndividualNewsView({ id }) {
+  const dataObj = data[id];
   const mdUp = useResponsive("up", "md");
-  const dataObj = Object.values(data);
 
   return (
     <MainLayout>
@@ -35,7 +31,7 @@ export default function NewsView(params) {
         title={"Мэдээ Мэдээлэл"}
       />
 
-      <Container sx={{ mt: 2 }}>
+      <Container sx={{ my: 2 }}>
         {!mdUp && (
           <Box sx={{ my: 4 }}>
             <Typography variant="h5">Мэдээний төрөл</Typography>
@@ -50,16 +46,10 @@ export default function NewsView(params) {
         <Grid container>
           <Grid item key={"0"} md={8}>
             <Stack spacing={2}>
-              {dataObj.map((item) => (
-                <HorizontalNewsCard
-                  id={item.id}
-                  key={item.id}
-                  imgURL={item.imgURL}
-                  title={item.title}
-                  content={item.subtitle}
-                  timestamp={item.timestamp}
-                />
-              ))}
+              <Image src={dataObj.imgURL} ratio={"16/9"} />
+              <Typography>{dataObj.timestamp}</Typography>
+              <Typography variant="h6">{dataObj.title}</Typography>
+              <Typography textAlign={"justify"}>{dataObj.content}</Typography>
             </Stack>
           </Grid>
           {mdUp && (
@@ -102,7 +92,7 @@ export default function NewsView(params) {
                     </List>
                   </Box>
                 </Stack>
-                <Image />
+                <Image ratio={"9/16"} />
               </Stack>
             </Grid>
           )}

@@ -20,7 +20,7 @@ import Carousel, {
 import { delay } from "lodash";
 
 // import { bgGradient } from "src/theme/css";
-import { Great_Vibes } from "next/font/google";
+// import { Great_Vibes } from "next/font/google";
 
 // ----------------------------------------------------------------------
 
