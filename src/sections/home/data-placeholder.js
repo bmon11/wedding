@@ -1,22 +1,22 @@
 const serviceData = [
   {
     imgURL: "/assets/images/home/services/bg_1.jpg",
-    description: "Зохион байгуулах",
+    description: "ЗОХИОН БАЙГУУЛАХ",
     nextPath: "",
   },
   {
     imgURL: "/assets/images/home/services/bg_2.jpg",
-    description: "Фото, видео",
+    description: "ФОТО, ВИДЕО",
     nextPath: "",
   },
   {
     imgURL: "/assets/images/home/services/bg_1.jpg",
-    description: "Чимэглэл",
+    description: "ЧИМЭГЛЭЛ",
     nextPath: "",
   },
   {
     imgURL: "/assets/images/home/services/bg_2.jpg",
-    description: "Түрээс",
+    description: "ТҮРЭЭС",
     nextPath: "",
   },
 ];

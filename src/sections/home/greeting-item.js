@@ -18,7 +18,7 @@ export default function GreetingItem(params) {
           <Image
             dir="ltr"
             alt={"Greetings"}
-            src={"/assets/images/home/services/greetings.jpg"}
+            src={"/assets/images/home/services/greetings_f.jpg"}
             ratio="1/1"
             sx={{
               border: 0,

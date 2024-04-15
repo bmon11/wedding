@@ -24,12 +24,12 @@ export default function ServiceItem(params) {
     >
       <Container
         sx={{
-          mb: 10,
+          my: 10,
         }}
       >
-        <Typography variant="h3" align="center" sx={{ mb: 10, mt: 15 }}>
+        {/* <Typography variant="h3" align="center" sx={{ mb: 10, mt: 15 }}>
           Бидний үйлчилгээ
-        </Typography>
+        </Typography> */}
         <Grid container spacing={3}>
           {[0, 1, 2, 3].map((value) => (
             <Grid item key={value} xs={6} md={3}>
@@ -40,6 +40,12 @@ export default function ServiceItem(params) {
                   // borderRadius: 0,
                 }}
               >
+                <Box align="left">
+                  <Typography variant="h6" align="left" py={1}>
+                    {serviceData[value].description}
+                  </Typography>
+                  {/* <Button variant="outlined">↪</Button> */}
+                </Box>
                 <Image
                   dir="ltr"
                   alt={serviceData[value].description}
@@ -51,12 +57,6 @@ export default function ServiceItem(params) {
                     px: 3,
                   }}
                 />
-                <Box align="left">
-                  <Typography variant="h6" align="left" py={1}>
-                    {serviceData[value].description}
-                  </Typography>
-                  <Button variant="outlined">↪</Button>
-                </Box>
               </Paper>
             </Grid>
           ))}

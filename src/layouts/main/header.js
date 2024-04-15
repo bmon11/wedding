@@ -111,19 +111,6 @@ export default function Header() {
           title: "Фото, видео",
           path: "#",
           caption: "This is the caption",
-          // children: [
-          //   { title: "Page 2.1", path: "#" },
-          //   { title: "Page 2.2", path: "#" },
-          //   {
-          //     title: "Page 2.3",
-          //     path: "#",
-          //     children: [
-          //       { title: "Page 2.3.1", path: "#" },
-          //       { title: "Page 2.3.2", path: "#" },
-          //       { title: "Page 2.3.3", path: "#" },
-          //     ],
-          //   },
-          // ],
         },
         {
           title: "Чимэглэл",
