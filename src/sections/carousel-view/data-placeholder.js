@@ -2,14 +2,18 @@ const dataPlaceholder = [
   {
     id: 0,
     title: "ХУРИМЫН ЛИЗИНГ",
-    coverUrl: "/assets/images/home/services/main_bg_1.jpg",
+    // coverUrl: "/assets/images/home/services/main_bg_1.jpg",
+    coverUrl:
+      "https://unconventionalwedding.co.uk/wp-content/uploads/2022/02/finn-the-fox-photography-Unconventional-Wedding-Fleetwood-Mac-Wedding25.jpg",
     description:
       "In a thrilling display of strategic brilliance, the recent Mongolian Chess Championship witnessed the rise of a new chess...",
   },
   {
     id: 1,
     title: "ХУРИМЫН ЛИЗИНГ",
-    coverUrl: "/assets/images/home/services/main_bg_2.jpg",
+    // coverUrl: "/assets/images/home/services/main_bg_2.jpg",
+    coverUrl:
+      "https://thecaryls.co.uk/wp-content/uploads/2022/12/The-Caryls-Photography-12.jpg",
     description:
       "The Mongolian chess scene dazzled spectators as top contenders clashed in a fierce battle of wits. The tournament showcased...",
   },

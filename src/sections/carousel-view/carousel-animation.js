@@ -101,7 +101,7 @@ function CarouselItem({ item, active }) {
           <Typography
             variant="h2"
             fontWeight={"bold"}
-            color={grey[900]}
+            color={"common.white"}
             maxWidth={300}
             gutterBottom
           >
