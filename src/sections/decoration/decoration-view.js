@@ -2,6 +2,7 @@
 import MainLayout from "src/layouts/main";
 import HeroImageService from "src/components/image/hero-image-service";
 import { Container, Typography, Stack } from "@mui/material";
+import ControlledForm from "src/components/form";
 
 export default function DecorationView(params) {
   return (
@@ -22,7 +23,7 @@ export default function DecorationView(params) {
             fontWeight={"bold"}
             textAlign={"center"}
           >
-            Чимэглэлийн үйлчилгээ
+            Чимэглэлийн үйлчилгэ
           </Typography>
           <Typography textAlign={"justify"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -47,6 +48,7 @@ export default function DecorationView(params) {
             consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
             pariatur?
           </Typography>
+          <ControlledForm />
         </Stack>
       </Container>
     </MainLayout>

@@ -23,15 +23,15 @@ export default function HeroImageService({ imgURL, title, description }) {
               position: "absolute",
               ...bgGradient({
                 direction: "to right",
-                startColor: `${theme.palette.common.black} 00%`,
-                endColor: `${alpha(theme.palette.common.black, 0.2)} 70%`,
+                startColor: `${theme.palette.grey[800]} 00%`,
+                endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
               }),
               transform: "translate(0px,-128px)",
             }}
           >
             <Container padding={2}>
               <Typography
-                color={theme.palette.warning.main}
+                color={theme.palette.common.white}
                 fontSize={"2rem"}
                 fontWeight={"bold"}
               >
@@ -56,15 +56,15 @@ export default function HeroImageService({ imgURL, title, description }) {
               position: "absolute",
               ...bgGradient({
                 direction: "to right",
-                startColor: `${theme.palette.common.black} 0%`,
-                endColor: `${alpha(theme.palette.common.black, 0.5)} 70%`,
+                startColor: `${theme.palette.grey[800]} 00%`,
+                endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
               }),
               transform: "translate(0px,-116px)",
             }}
           >
             <Container padding={2}>
               <Typography
-                color={theme.palette.warning.main}
+                color={theme.palette.common.white}
                 fontSize={"1.5rem"}
                 fontWeight={"bold"}
               >
