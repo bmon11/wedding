@@ -94,24 +94,26 @@ export default function ReactHookForm({ debug }) {
 
       <FormProvider methods={methods} onSubmit={onSubmit}>
         <Box
-          gap={5}
-          display="grid"
-          gridTemplateColumns={{
-            xs: "repeat(1, 1fr)",
-            sm: "repeat(2, 1fr)",
-          }}
+        // gap={5}
+        // display="grid"
+        // gridTemplateColumns={{
+        //   xs: "repeat(1, 1fr)",
+        //   sm: "repeat(2, 1fr)",
+        // }}
         >
           <Stack
             spacing={2}
             sx={{
-              border: 1,
               padding: 2,
               borderRadius: 1,
-              borderColor: theme.palette.grey[100],
             }}
           >
             <Block>
-              <RHFTextField name="fullName" label="Овог нэр" />
+              <RHFTextField
+                name="fullName"
+                label="Овог нэр"
+                sx={{ bgcolor: theme.palette.grey[0], borderRadius: 1 }}
+              />
             </Block>
 
             <Block>
@@ -119,11 +121,16 @@ export default function ReactHookForm({ debug }) {
                 name="phoneNumber"
                 label="Утасны дугаар"
                 type={"number"}
+                sx={{ bgcolor: theme.palette.grey[0], borderRadius: 1 }}
               />
             </Block>
 
-            <Block label="RHFSelect">
-              <RHFSelect name="singleSelect" label="Үйлчилгээгээ сонгоно уу">
+            <Block>
+              <RHFSelect
+                name="singleSelect"
+                label="Үйлчилгээгээ сонгоно уу"
+                sx={{ bgcolor: theme.palette.grey[0], borderRadius: 1 }}
+              >
                 <MenuItem value="">None</MenuItem>
                 <Divider sx={{ borderStyle: "dashed" }} />
                 {OPTIONS.map((option) => (
@@ -135,7 +142,11 @@ export default function ReactHookForm({ debug }) {
             </Block>
 
             <Block>
-              <RHFTextField name="extra" label="Та хүсэлтээ бичнэ үү" />
+              <RHFTextField
+                name="extra"
+                label="Та хүсэлтээ бичнэ үү"
+                sx={{ bgcolor: theme.palette.grey[0], borderRadius: 1 }}
+              />
             </Block>
             <LoadingButton
               fullWidth
@@ -143,6 +154,7 @@ export default function ReactHookForm({ debug }) {
               type="submit"
               variant="soft"
               loading={isSubmitting}
+              sx={{ bgcolor: theme.palette.grey[0], borderRadius: 1 }}
             >
               ХҮСЭЛТ ИЛГЭЭХ
             </LoadingButton>

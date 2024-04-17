@@ -6,7 +6,7 @@ import ControlledForm from "src/components/form";
 import { dataPlaceholder } from "../carousel-view/data-placeholder";
 import CarouselCenterMode from "../carousel-view/carousel-center-mode";
 
-export default function DecorationView(params) {
+export default function ArrangementView(params) {
   return (
     <MainLayout>
       <HeroImageService
@@ -16,7 +16,7 @@ export default function DecorationView(params) {
         description={
           "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style."
         }
-        title={"Чимэглэлийн үйлчилгээ"}
+        title={"Зохион Байгуулах Үйлчилгээ"}
       />
       <Container>
         <Stack spacing={2} my={2}>
@@ -25,7 +25,7 @@ export default function DecorationView(params) {
             fontWeight={"bold"}
             textAlign={"center"}
           >
-            Чимэглэлийн үйлчилгээ
+            Зохион Байгуулах Үйлчилгээ
           </Typography>
           <Typography textAlign={"justify"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

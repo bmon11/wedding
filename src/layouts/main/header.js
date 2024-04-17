@@ -99,17 +99,13 @@ export default function Header() {
       caption: "This is the caption",
       children: [
         {
-          title: "Манай үйлчилгээ",
-          path: "/",
+          title: "Зохион байгуулах",
+          path: "/service/arrangement",
           caption: "This is the caption",
-          // children: [
-          //   { title: "Page 1.1", path: "#" },
-          //   { title: "Page 1.2", path: "#" },
-          // ],
         },
         {
           title: "Фото, видео",
-          path: "#",
+          path: "/service/photovideo",
           caption: "This is the caption",
         },
         {
@@ -119,7 +115,7 @@ export default function Header() {
         },
         {
           title: "Түрээсийн үйлчилгээ",
-          path: "#",
+          path: "/service/rent",
           caption: "This is the caption",
         },
       ],

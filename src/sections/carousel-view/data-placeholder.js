@@ -19,8 +19,7 @@ const dataPlaceholder = [
   },
   {
     id: 2,
-    title:
-      "Ulan Bator Brilliance: Өсөн нэмэгдэж буй од Монголын шатрын титэмийг хожлоо",
+    title: "ХУРИМЫН ЗУРАГ",
     coverUrl:
       "https://images.pexels.com/photos/6598711/pexels-photo-6598711.jpeg?auto=compress&cs=tinysrgb&w=600",
     description:
@@ -28,8 +27,7 @@ const dataPlaceholder = [
   },
   {
     id: 3,
-    title:
-      "Хааны гамбит өрсөлдөгчдөө гайхшруулж байна: Монголд уламжлалт бус стратеги ялалт байгуулав",
+    title: "ХУРИМЫН ЗУРАГ",
     coverUrl:
       "https://images.pexels.com/photos/6598863/pexels-photo-6598863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description:
