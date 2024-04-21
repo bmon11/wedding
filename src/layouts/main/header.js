@@ -49,30 +49,13 @@ export default function Header() {
       children: [
         {
           title: "Мэндчилгээ",
-          path: "/",
+          path: "/about/greeting",
           caption: "Захиралын мэндчилгээ",
-          // children: [
-          //   { title: "Page 1.1", path: "#" },
-          //   { title: "Page 1.2", path: "#" },
-          // ],
         },
         {
           title: "Баг хамт олон",
           caption: "Баг хамт олоны танилцуулга",
-          path: "#",
-          // children: [
-          //   { title: "Page 2.1", path: "#" },
-          //   { title: "Page 2.2", path: "#" },
-          //   {
-          //     title: "Page 2.3",
-          //     path: "#",
-          //     children: [
-          //       { title: "Page 2.3.1", path: "#" },
-          //       { title: "Page 2.3.2", path: "#" },
-          //       { title: "Page 2.3.3", path: "#" },
-          //     ],
-          //   },
-          // ],
+          path: "/about/members",
         },
         {
           title: "Зорилго зорилт",
@@ -83,13 +66,13 @@ export default function Header() {
         {
           title: "Танилцуулга",
           caption: "Гэрлэх ёслолын ордны танилцуулга",
-          path: "#",
+          path: "/about",
         },
         {
           title: "Бүтэц зохион байгуулалт",
           caption:
             "Гэрлэх ёслолын ордны алба хэлтсийн бүтэц зохион байгуулалтын бүдүүвч зургаар",
-          path: "#",
+          path: "/about/structure",
         },
       ],
     },
@@ -162,7 +145,7 @@ export default function Header() {
       children: [
         {
           title: "Байгууллагын ил тод байдал",
-          path: "#",
+          path: "/transparency",
           caption: "This is the caption",
           // children: [
           //   { title: "Page 1.1", path: "#" },
@@ -171,7 +154,7 @@ export default function Header() {
         },
         {
           title: "Санхүүгийн ил тод байдал",
-          path: "#",
+          path: "https://google.com",
           // children: [
           //   { title: "Page 2.1", path: "#" },
           //   { title: "Page 2.2", path: "#" },
@@ -186,7 +169,7 @@ export default function Header() {
           //   },
           // ],
         },
-        { title: "Хүний нөөцийн ил тод байдал", path: "#" },
+        { title: "Хүний нөөцийн ил тод байдал", path: "/transparency/hr" },
         { title: "Хууль, эрх зүй, дүрэм журам", path: "#" },
         { title: "Өргөдөл гомдлын шийдвэрлэлт", path: "#" },
       ],
