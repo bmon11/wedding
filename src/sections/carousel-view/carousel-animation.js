@@ -105,9 +105,9 @@ function CarouselItem({ item, active }) {
             color={"common.white"}
             maxWidth={300}
             gutterBottom
-            fontFamily={caligraphicFont.style.fontFamily}
+            // fontFamily={caligraphicFont.style.fontFamily}
           >
-            {title}jojo
+            {title}
           </Typography>
         </m.div>
 

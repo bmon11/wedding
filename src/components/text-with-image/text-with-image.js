@@ -28,7 +28,7 @@ export default function TextWithImage({ title, imgURL, content }) {
         </Grid>
 
         <Grid item key={"paragraph"} xs={12} md={6}>
-          <Typography textAlign={"justify"} fontSize={21}>
+          <Typography textAlign={"justify"} fontSize={"1.25rem"}>
             {content}
           </Typography>
         </Grid>

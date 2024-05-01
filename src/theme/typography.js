@@ -33,49 +33,34 @@ export const primaryFont = Inter({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-export const secondaryFont = localFont({
+export const secondaryFont = Montserrat({
   weight: ["400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
   display: "swap",
-  src: [
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+  fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-export const caligraphicFont = localFont({
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-  src: [
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-});
+// export const caligraphicFont = localFont({
+//   weight: ["400", "500", "600", "700", "800", "900"],
+//   display: "swap",
+//   src: [
+//     {
+//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
+//       weight: "700",
+//       style: "normal",
+//     },
+//   ],
+// });
 
 // export const secondaryFont = Montserrat({
 //   weight: ["400", "500", "600", "700", "800", "900"],
@@ -92,7 +77,7 @@ export const caligraphicFont = localFont({
 export const typography = {
   fontFamily: primaryFont.style.fontFamily,
   fontSecondaryFamily: secondaryFont.style.fontFamily,
-  fontCaligraphicFamily: caligraphicFont.style.fontFamily,
+  // fontCaligraphicFamily: caligraphicFont.style.fontFamily,
   fontWeightRegular: 400,
   fontWeightMedium: 500,
   fontWeightSemiBold: 600,

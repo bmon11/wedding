@@ -4,54 +4,65 @@ import MainLayout from "src/layouts/main";
 import HeroImage from "src/components/image/hero-image";
 import { Grid, Typography, Container } from "@mui/material";
 import GridItem from "src/components/grid-item/grid-item";
+import Members from "src/components/member-grid/members";
 
 const data = [
   {
+    id: 0,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 1,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 2,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 3,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 4,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 5,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 6,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 7,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 8,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
   },
   {
+    id: 9,
     imgURL:
       "https://img.freepik.com/premium-photo/asian-girl-thinking-doubts-cartoon-illustration-cute-kid-character-with-dreamy-face-abstract-background-ai-generated-bright-drawn-colorful-poster_107173-44008.jpg",
     description: "lorem is a just novel written in latin.",
@@ -77,17 +88,7 @@ export default function MembersView(params) {
         >
           Манай Хамт Олон
         </Typography>
-        <Grid
-          container
-          spacing={2}
-          margin={"auto"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          {data.map((item) => (
-            <GridItem imgURL={item.imgURL} description={item.description} />
-          ))}
-        </Grid>
+        <Members data={data} />
       </Container>
     </MainLayout>
   );

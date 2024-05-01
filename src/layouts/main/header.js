@@ -166,7 +166,7 @@ export default function Header() {
           // ],
         },
         { title: "Хүний нөөцийн ил тод байдал", path: "/transparency/hr" },
-        { title: "Хууль, эрх зүй, дүрэм журам", path: "#" },
+        { title: "Хууль, эрх зүй, дүрэм журам", path: "/transparency/law" },
         { title: "Өргөдөл гомдлын шийдвэрлэлт", path: "#" },
       ],
     },
