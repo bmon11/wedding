@@ -2,6 +2,7 @@
 
 import MainLayout from "src/layouts/main";
 import HeroImageService from "src/components/image/hero-image-service";
+import { Typography } from "@mui/material";
 
 export default function TransparencyHR(params) {
   return (
@@ -15,6 +16,7 @@ export default function TransparencyHR(params) {
         }
         title={"Хүний нөөцийн ил тод байдал"}
       />
+      <Typography>Lorem</Typography>
     </MainLayout>
   );
 }

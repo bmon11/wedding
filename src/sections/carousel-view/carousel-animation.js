@@ -17,6 +17,7 @@ import Carousel, {
   useCarousel,
   CarouselArrowIndex,
 } from "src/components/carousel";
+import { caligraphicFont } from "src/theme/typography";
 import { delay } from "lodash";
 
 // import { bgGradient } from "src/theme/css";
@@ -104,8 +105,9 @@ function CarouselItem({ item, active }) {
             color={"common.white"}
             maxWidth={300}
             gutterBottom
+            fontFamily={caligraphicFont.style.fontFamily}
           >
-            {item.title}
+            {title}jojo
           </Typography>
         </m.div>
 
@@ -117,7 +119,7 @@ function CarouselItem({ item, active }) {
             maxWidth={400}
             textAlign={"justify"}
           >
-            {item.description}
+            {`${item.description}`}
           </Typography>
         </m.div>
 

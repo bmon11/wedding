@@ -112,10 +112,6 @@ export default function Header() {
           title: "Эмэгтэйчүүд",
           path: "#",
           caption: "This is the caption",
-          // children: [
-          //   { title: "Page 1.1", path: "#" },
-          //   { title: "Page 1.2", path: "#" },
-          // ],
         },
         {
           title: "Эрчүүд",
@@ -183,10 +179,6 @@ export default function Header() {
           title: "Захиалга өгөх",
           path: "#",
           caption: "This is the caption",
-          // children: [
-          //   { title: "Page 1.1", path: "#" },
-          //   { title: "Page 1.2", path: "#" },
-          // ],
         },
         {
           title: "Санал хүсэлт",
@@ -208,7 +200,6 @@ export default function Header() {
         { title: "Page 3", path: "#" },
       ],
     },
-    // { title: "External", path: "https://www.google.com/" }
   ];
 
   return (

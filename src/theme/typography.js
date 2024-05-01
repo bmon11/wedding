@@ -1,5 +1,6 @@
 import { Barlow, Public_Sans } from "next/font/google";
 import { Montserrat, Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 // ----------------------------------------------------------------------
 
@@ -32,12 +33,56 @@ export const primaryFont = Inter({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-export const secondaryFont = Montserrat({
+export const secondaryFont = localFont({
   weight: ["400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
   display: "swap",
-  fallback: ["Helvetica", "Arial", "sans-serif"],
+  src: [
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
+
+export const caligraphicFont = localFont({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  src: [
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/AdineKirnberg-Alternate.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
+
+// export const secondaryFont = Montserrat({
+//   weight: ["400", "500", "600", "700", "800", "900"],
+//   subsets: ["latin"],
+//   display: "swap",
+//   fallback: ["Helvetica", "Arial", "sans-serif"],
+// });
 
 // ----------------------------------------------------------------------
 
@@ -47,6 +92,7 @@ export const secondaryFont = Montserrat({
 export const typography = {
   fontFamily: primaryFont.style.fontFamily,
   fontSecondaryFamily: secondaryFont.style.fontFamily,
+  fontCaligraphicFamily: caligraphicFont.style.fontFamily,
   fontWeightRegular: 400,
   fontWeightMedium: 500,
   fontWeightSemiBold: 600,
