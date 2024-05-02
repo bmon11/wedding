@@ -20,12 +20,8 @@ export default function RentView(params) {
       />
       <Container>
         <Stack spacing={2} my={2}>
-          <Typography
-            fontSize={"1.5rem"}
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
-            Заалны Түрээс
+          <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
+            Заалны түрээс
           </Typography>
           <Typography textAlign={"justify"}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

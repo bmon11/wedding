@@ -3,13 +3,19 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { caligraphicFont } from "src/theme/typography";
 
 import Image from "src/components/image/image";
 
 export default function TextWithImage({ title, imgURL, content }) {
   return (
     <Container sx={{ mb: 10 }}>
-      <Typography variant="h3" align="center" my={5}>
+      <Typography
+        variant="h2"
+        align="center"
+        my={5}
+        fontFamily={caligraphicFont.style.fontFamily}
+      >
         {title}
       </Typography>
 

@@ -6,11 +6,17 @@ import Box from "@mui/material/Box";
 
 import MediaCard from "src/components/card/media-card";
 import { newsData } from "./data-placeholder";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function NewsItem() {
   return (
     <Container sx={{ mb: 10 }}>
-      <Typography variant="h3" align="center" mb={10}>
+      <Typography
+        variant="h1"
+        align="center"
+        mb={10}
+        fontFamily={caligraphicFont.style.fontFamily}
+      >
         Мэдээ мэдээлэл
       </Typography>
 

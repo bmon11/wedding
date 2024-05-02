@@ -5,11 +5,17 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
 import Image from "src/components/image/image";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function GreetingItem(params) {
   return (
     <Container sx={{ mb: 10 }}>
-      <Typography variant="h3" align="center" mb={10}>
+      <Typography
+        variant="h1"
+        align="center"
+        mb={10}
+        fontFamily={caligraphicFont.style.fontFamily}
+      >
         Мэндчилгээ
       </Typography>
 
@@ -18,7 +24,7 @@ export default function GreetingItem(params) {
           <Image
             dir="ltr"
             alt={"Greetings"}
-            src={"/assets/images/home/services/greetings_f.jpg"}
+            src={"/assets/images/home/services/ceo.jpg"}
             ratio="1/1"
             sx={{
               border: 0,

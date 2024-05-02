@@ -40,27 +40,27 @@ export const secondaryFont = Montserrat({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-// export const caligraphicFont = localFont({
-//   weight: ["400", "500", "600", "700", "800", "900"],
-//   display: "swap",
-//   src: [
-//     {
-//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
-//       weight: "400",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
-//       weight: "500",
-//       style: "normal",
-//     },
-//     {
-//       path: "../../public/fonts/Bickham-Script-Pro-Semibold.ttf",
-//       weight: "700",
-//       style: "normal",
-//     },
-//   ],
-// });
+export const caligraphicFont = localFont({
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  src: [
+    {
+      path: "../../public/fonts/Mogul-Adine-Kirnberg.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Mogul-Adine-Kirnberg.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Mogul-Adine-Kirnberg.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});
 
 // export const secondaryFont = Montserrat({
 //   weight: ["400", "500", "600", "700", "800", "900"],
@@ -86,19 +86,24 @@ export const typography = {
     fontWeight: 800,
     lineHeight: 80 / 64,
     fontSize: pxToRem(40),
-    ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    fontFamily: caligraphicFont.style.fontFamily,
+    // ...responsiveFontSizes({ sm: 52, md: 58, lg: 64 }),
+    ...responsiveFontSizes({ sm: 68, md: 74, lg: 80 }),
   },
   h2: {
     fontWeight: 800,
     lineHeight: 64 / 48,
     fontSize: pxToRem(32),
-    ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
+    fontFamily: caligraphicFont.style.fontFamily,
+    ...responsiveFontSizes({ sm: 56, md: 60, lg: 64 }),
+    // ...responsiveFontSizes({ sm: 40, md: 44, lg: 48 }),
   },
   h3: {
     fontWeight: 700,
     lineHeight: 1.5,
     fontSize: pxToRem(24),
-    ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
+    ...responsiveFontSizes({ sm: 42, md: 46, lg: 50 }),
+    // ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
   },
   h4: {
     fontWeight: 700,

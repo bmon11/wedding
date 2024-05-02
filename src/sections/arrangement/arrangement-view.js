@@ -5,6 +5,7 @@ import { Container, Typography, Stack, Box, Grid } from "@mui/material";
 import ControlledForm from "src/components/form";
 import { dataPlaceholder } from "../carousel-view/data-placeholder";
 import CarouselCenterMode from "../carousel-view/carousel-center-mode";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function ArrangementView(params) {
   return (
@@ -21,9 +22,10 @@ export default function ArrangementView(params) {
       <Container>
         <Stack spacing={2} my={2}>
           <Typography
-            fontSize={"1.5rem"}
+            variant="h2"
             fontWeight={"bold"}
             textAlign={"center"}
+            fontFamily={caligraphicFont.style.fontFamily}
           >
             Зохион Байгуулах Үйлчилгээ
           </Typography>

@@ -4,6 +4,7 @@ import MainLayout from "src/layouts/main";
 import Image from "src/components/image/image";
 import { Container, Box, Typography } from "@mui/material";
 import HeroImage from "src/components/image/hero-image";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function StructurePage(params) {
   return (
@@ -22,12 +23,17 @@ export default function StructurePage(params) {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Typography fontWeight={"bold"} fontSize={"2rem"} my={4}>
+          <Typography
+            variant="h2"
+            fontWeight={"bold"}
+            my={4}
+            fontFamily={caligraphicFont.style.fontFamily}
+          >
             Байгууллагын бүтэц
           </Typography>
           <Image
             src={
-              "https://d1ltgr77xghfz9.cloudfront.net/wp-content/uploads/2017/05/small-business-organizational-structure-examples-01.jpg"
+              "https://images.edrawmax.com/what-is/company-organizational-chart/first-img.png"
             }
             ratio={"16/9"}
           />

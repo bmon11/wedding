@@ -5,6 +5,7 @@ import HeroImage from "src/components/image/hero-image";
 import { Grid, Typography, Container } from "@mui/material";
 import GridItem from "src/components/grid-item/grid-item";
 import Members from "src/components/member-grid/members";
+import { caligraphicFont } from "src/theme/typography";
 
 const data = [
   {
@@ -81,10 +82,11 @@ export default function MembersView(params) {
       />
       <Container>
         <Typography
-          fontSize={"1.5rem"}
+          variant="h2"
           fontWeight={"bold"}
           textAlign={"center"}
           marginY={3}
+          fontFamily={caligraphicFont.style.fontFamily}
         >
           Манай Хамт Олон
         </Typography>

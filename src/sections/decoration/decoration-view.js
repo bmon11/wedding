@@ -20,11 +20,7 @@ export default function DecorationView(params) {
       />
       <Container>
         <Stack spacing={2} my={2}>
-          <Typography
-            fontSize={"1.5rem"}
-            fontWeight={"bold"}
-            textAlign={"center"}
-          >
+          <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
             Чимэглэлийн үйлчилгээ
           </Typography>
           <Typography textAlign={"justify"}>

@@ -4,6 +4,7 @@ import MainLayout from "src/layouts/main";
 import HeroImage from "src/components/image/hero-image";
 import { Container, Typography, Stack } from "@mui/material";
 import ServiceItem from "../home/service-item";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function AboutView(params) {
   return (
@@ -18,7 +19,11 @@ export default function AboutView(params) {
 
       <Container sx={{ marginTop: "5px" }}>
         <Stack spacing={3}>
-          <Typography variant="h3" textAlign={"center"}>
+          <Typography
+            variant="h2"
+            textAlign={"center"}
+            fontFamily={caligraphicFont.style.fontFamily}
+          >
             Танилцуулга
           </Typography>
           <Typography textAlign={"justify"}>

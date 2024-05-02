@@ -14,6 +14,7 @@ import { paths } from "src/routes/paths";
 import { _mock } from "src/_mock";
 
 import Iconify from "src/components/iconify";
+import { caligraphicFont } from "src/theme/typography";
 // import CustomBreadcrumbs from "src/components/custom-breadcrumbs";
 
 // import ComponentHero from "src/sections/_examples/component-hero";
@@ -40,7 +41,11 @@ export default function FAQItem() {
 
   return (
     <Container sx={{ my: 10 }}>
-      <Typography variant="h3" textAlign={"center"}>
+      <Typography
+        variant="h1"
+        textAlign={"center"}
+        fontFamily={caligraphicFont.style.fontFamily}
+      >
         Түгээмэл Асуултууд
       </Typography>
 

@@ -92,7 +92,6 @@ function CarouselItem({ item, active }) {
         sx={{
           left: "18%",
           top: "25%",
-          maxWidth: 540,
           textAlign: "left",
           position: "absolute",
           color: "common.black",
@@ -100,12 +99,11 @@ function CarouselItem({ item, active }) {
       >
         <m.div variants={variants}>
           <Typography
-            variant="h2"
             fontWeight={"bold"}
             color={"common.white"}
-            maxWidth={300}
+            fontSize={"7em"}
             gutterBottom
-            // fontFamily={caligraphicFont.style.fontFamily}
+            fontFamily={caligraphicFont.style.fontFamily}
           >
             {title}
           </Typography>

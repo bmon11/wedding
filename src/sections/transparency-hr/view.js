@@ -4,6 +4,7 @@ import MainLayout from "src/layouts/main";
 import HeroImageService from "src/components/image/hero-image-service";
 import { Typography, Container } from "@mui/material";
 import Members from "src/components/member-grid/members";
+import { caligraphicFont } from "src/theme/typography";
 const data = [
   {
     id: 0,
@@ -80,7 +81,12 @@ export default function TransparencyHR(params) {
         title={"Хүний нөөцийн ил тод байдал"}
       />
       <Container>
-        <Typography variant="h3" align="center" my={5}>
+        <Typography
+          variant="h2"
+          align="center"
+          my={5}
+          fontFamily={caligraphicFont.style.fontFamily}
+        >
           Хүний нөөцийн ил тод байдал
         </Typography>
 

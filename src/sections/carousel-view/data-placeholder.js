@@ -1,7 +1,7 @@
 const dataPlaceholder = [
   {
     id: 0,
-    title: "ХУРИМЫН ЛИЗИНГ",
+    title: "Хумимын зураг",
     // coverUrl: "/assets/images/home/services/main_bg_1.jpg",
     coverUrl:
       "https://unconventionalwedding.co.uk/wp-content/uploads/2022/02/finn-the-fox-photography-Unconventional-Wedding-Fleetwood-Mac-Wedding25.jpg",
@@ -10,7 +10,7 @@ const dataPlaceholder = [
   },
   {
     id: 1,
-    title: "ХУРИМЫН ЛИЗИНГ",
+    title: "Хуримын лизинг",
     // coverUrl: "/assets/images/home/services/main_bg_2.jpg",
     coverUrl:
       "https://thecaryls.co.uk/wp-content/uploads/2022/12/The-Caryls-Photography-12.jpg",
@@ -19,7 +19,7 @@ const dataPlaceholder = [
   },
   {
     id: 2,
-    title: "ХУРИМЫН ЗУРАГ",
+    title: "Хуримын лизинг",
     coverUrl:
       "https://images.pexels.com/photos/6598711/pexels-photo-6598711.jpeg?auto=compress&cs=tinysrgb&w=600",
     description:
@@ -27,7 +27,7 @@ const dataPlaceholder = [
   },
   {
     id: 3,
-    title: "ХУРИМЫН ЗУРАГ",
+    title: "Хумимын зураг",
     coverUrl:
       "https://images.pexels.com/photos/6598863/pexels-photo-6598863.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     description:

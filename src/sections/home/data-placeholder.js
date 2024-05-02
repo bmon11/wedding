@@ -1,23 +1,31 @@
 const serviceData = [
   {
-    imgURL: "/assets/images/home/services/bg_1.jpg",
-    description: "ЗОХИОН БАЙГУУЛАХ",
-    nextPath: "",
+    imgURL:
+      "https://www.signupgenius.com/cms/images/home/wedding-planning-made-easy-refresh-article-600x400.jpg",
+    // imgURL: "/assets/images/home/services/bg_1.jpg",
+    description: "Зохион байгуулах",
+    nextPath: "/arrangement",
   },
   {
-    imgURL: "/assets/images/home/services/bg_2.jpg",
-    description: "ФОТО, ВИДЕО",
-    nextPath: "",
+    imgURL:
+      "https://cdn0.hitched.co.uk/article/1329/3_2/960/jpg/79231-shutterstock-795958900.jpeg",
+    // imgURL: "/assets/images/home/services/bg_2.jpg",
+    description: "Фото, Видео",
+    nextPath: "/photovideo",
   },
   {
-    imgURL: "/assets/images/home/services/bg_1.jpg",
-    description: "ЧИМЭГЛЭЛ",
-    nextPath: "",
+    imgURL:
+      "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/7/29/0/Original_Jennie-Andrews-bicycle-wedding-decor.jpg.rend.hgtvcom.1280.1920.suffix/1564403585229.jpeg",
+    // imgURL: "/assets/images/home/services/bg_1.jpg",
+    description: "Чимэглэл",
+    nextPath: "/decoration",
   },
   {
-    imgURL: "/assets/images/home/services/bg_2.jpg",
-    description: "ТҮРЭЭС",
-    nextPath: "",
+    imgURL:
+      "https://media.istockphoto.com/id/947245660/photo/wedding-planner-background.jpg?s=612x612&w=0&k=20&c=Rk47WVEe4nOvH-fcC6wTWlSYOh9bvGHt6yd85XFY_jA=",
+    // imgURL: "/assets/images/home/services/bg_2.jpg",
+    description: "Түрээс",
+    nextPath: "/rent",
   },
 ];
 

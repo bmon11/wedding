@@ -3,6 +3,7 @@
 import MainLayout from "src/layouts/main";
 import HeroImageService from "src/components/image/hero-image-service";
 import { Typography, Container } from "@mui/material";
+import { caligraphicFont } from "src/theme/typography";
 
 export default function TransparencyLaw(params) {
   return (
@@ -17,7 +18,12 @@ export default function TransparencyLaw(params) {
         title={"Lorem Ipsum"}
       />
       <Container>
-        <Typography variant="h3" align="center" my={5}>
+        <Typography
+          variant="h2"
+          align="center"
+          my={5}
+          fontFamily={caligraphicFont.style.fontFamily}
+        >
           Хууль эрх зүй
         </Typography>
 
