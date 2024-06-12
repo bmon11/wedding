@@ -61,7 +61,7 @@ export default function Header() {
           title: "Зорилго зорилт",
           caption:
             "Алсын хараа, Эрхэм зорилго, Үнэт зүйл, Үйл ажиллагааны чиглэл",
-          path: "#",
+          path: "/about/goal",
         },
         {
           title: "Танилцуулга",

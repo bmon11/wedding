@@ -17,7 +17,7 @@ export default function NewsItem() {
         mb={10}
         fontFamily={caligraphicFont.style.fontFamily}
       >
-        Мэдээ мэдээлэл
+        Тэдээ Тэдээлэл
       </Typography>
 
       <Grid container spacing={3}>

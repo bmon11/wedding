@@ -16,7 +16,7 @@ export default function GreetingItem(params) {
         mb={10}
         fontFamily={caligraphicFont.style.fontFamily}
       >
-        Мэндчилгээ
+        Тэндчилгээ
       </Typography>
 
       <Grid container spacing={3}>

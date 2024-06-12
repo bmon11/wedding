@@ -2,7 +2,6 @@
 
 import MainLayout from "src/layouts/main";
 import HeroImage from "src/components/image/hero-image";
-import ServiceItem from "../home/service-item";
 import GreetingItem from "../home/greeting-item";
 
 export default function GreetingView(params) {
@@ -16,7 +15,6 @@ export default function GreetingView(params) {
         title={""}
       />
       <GreetingItem />
-      <ServiceItem />
     </MainLayout>
   );
 }

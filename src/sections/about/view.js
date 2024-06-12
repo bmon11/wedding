@@ -5,7 +5,9 @@ import HeroImage from "src/components/image/hero-image";
 import { Container, Typography, Stack } from "@mui/material";
 import ServiceItem from "../home/service-item";
 import { caligraphicFont } from "src/theme/typography";
-
+import Image from "src/components/image/image";
+import Box from "@mui/material/Box";
+ 
 export default function AboutView(params) {
   return (
     <MainLayout>
@@ -27,30 +29,56 @@ export default function AboutView(params) {
             Танилцуулга
           </Typography>
           <Typography textAlign={"justify"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.Sed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-            inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-            aut odit aut fugit, sed quia consequuntur magni dolores eos qu
+          Гэрлэх ёслолын ордон нь Монгол түмний гал голомтыг бадраан хуримын ёслолын үйл ажиллагааг эрхлэх үндсэн зорилготойгоор 1976 оны 06 сарын 14-нд байгуулагдаж одоог хүртэл үндсэн үйл ажиллагаагаараа амжилттай ажиллаж байна.
+  Бид гэр бүлийн амьдралд тохиолдох дахин давтагдашгүй алтан агшинг цаг хугацаанд нь хөнгөн шуурхай, соёлтой үйлчилгээгээр ханган ажилладаг мэргэшсэн хамт олон төдийгүй залуучуудыг гэр бүлийн амьдралд бэлтгэх зорилгоор гэр бүл сургалтын төвийг ажиллуулдаг.
+          <Box>
+          <br/>
+            <Image 
+              dir="ltr"
+              alt={"Greetings"}
+              src={"/assets/images/about/outside.jpg"}
+              ratio="21/9"
+              maxWidth={"70%"}
+              sx={{
+                border: 0,
+                borderRadius: 1,
+                marginLeft: '15%'
+              }}/>
+          </Box>
+          <br/>
+Залуу хосын хуримын үйл ажиллагааг зохион байгуулахдаа төрийн ёслолыг Их танхимд, гал голомт бадраах ёслолыг Бага танхимд болон Их өргөө гэрт тус тус зохион байгуулдаг. 
+Тус ордон байгуулагдсан цагаасаа эхлүүлэн 40 мянга гаруй хосын Гэрлэх ёслолын үйл ажиллагааг удирдан зохион байгуулж тэдгээрийн төрөл садан, зочин төлөөлөгч болох 2,5 сая иргэдэд үйлчилсэн байна. 
           </Typography>
+          <></>
+          <Box>
+          <Image 
+            dir="ltr"
+            alt={"Greetings"}
+            src={"/assets/images/about/entrance.jpg"}
+            ratio="21/9"
+            maxWidth={"70%"}
+            sx={{
+              border: 0,
+              borderRadius: 1,
+              marginLeft: '15%'
+            }}/>
+          </Box>
           <Typography textAlign={"justify"}>
-            ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-            quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?
+          Манай ордон зөвхөн Гэрлэх ёслолын үйл ажиллагаа зохион байгуулахаас гадна хуримын тэмдэглэлт ой Есөн эрдэнийн хурим Очир-Эрдэнийн хурим, Алтан хурим ,Оюу хурим, Сувдан хурим, Мөнгөн хурим,  Тана хурим, мөн  Олон улсын гэр бүлийн өдөр,  Нийслэл хот байгуулагдсаны ойг тохиолдуулан гэр бүлүүдтэйгээ хамт тэмдэглэн өнгөрүүлж гэрлэх ёслолыг зохион байгуулдаг уламжлалтай.
           </Typography>
+          <Box>
+            <Image 
+              dir="ltr"
+              alt={"Greetings"}
+              src={"/assets/images/about/gerchilgee.jpg"}
+              ratio="21/9"
+              maxWidth={"70%"}
+              sx={{
+                border: 0,
+                borderRadius: 1,
+                marginLeft: '15%'
+              }}/>
+          </Box>
         </Stack>
       </Container>
       <ServiceItem />
