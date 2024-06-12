@@ -20,7 +20,8 @@ export default function GreetingItem(params) {
       </Typography>
 
       <Grid container spacing={3}>
-        <Grid item key={"picture"} xs={12} md={6}>
+        <Grid item key={"picture"} xs={12} md={3}>
+          <Typography fontWeight={'bold'} marginBottom={3}>ЗАХИРЛЫН МЭНДЧИЛГЭЭ</Typography>
           <Image
             dir="ltr"
             alt={"Greetings"}
@@ -33,22 +34,38 @@ export default function GreetingItem(params) {
           />
         </Grid>
 
-        <Grid item key={"paragraph"} xs={12} md={6}>
-          <Typography textAlign={"justify"} fontSize={21}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
+        <Grid item key={"paragraph"} xs={12} md={9}>
+          
+          <Typography fontWeight={"bold"} marginBottom={3}>ГЭРЛЭХ ЁСЛОЛЫН ОРДОН-ын нийт хамт олны өмнөөс Та бүхэнтэй мэндчилж байгаадаа баяртай байна.</Typography>
+          <Typography textAlign={"justify"} fontSize={14}>
+          Энэ цаг мөчид Гэрлэх ёслолын ордон үйл ажиллагаагаа тасралтгүй явуулсаар 48 дэх жилтэйгээ золгож байна. 1976 онд байгуулагдаж өнөөдрийг хүртэл нийтдээ 42 мянга гаруй залуу хосын гал голомтыг бадрааж, хуримын ёслолыг ёслол төгөлдөр зохион байгуулжээ.
+          </Typography>
+          <br/>
+          <Typography textAlign={"justify"} fontSize={15}>
+          <Typography textAlign={"justify"} fontSize={15}>
+          Улс эх орны үнэт зүйл бол гэр бүл юм. Тиймээс гэр бүлийн сайн сайхны төлөө хийж буй бидний үйл ажиллагаа хамгаас чухал, нандин, харуцлагатай ажил юм.  Олон жилийн түүхтэй энэ сайхан өргөөнийхөө үйл ажиллагааг уламжлал шинэчлэлийг хослуулан байгууллагын үндсэн чиг үүргийн хүрээнд Монгол улсын засгийн газар болон Нийслэлийн Засаг даргын үйл ажиллагааны хөтөлбөр, төрөөс гэр бүл залуучуудын талаар баримталж буй бодлого, стратеги хууль тогтоомжуудыг хэрэгжүүлэн ажиллаж, нийгмийн хариуцлагынхаа хүрээнд гэр бүлийн боловсрол олгох танхимын болон ганцаарчилсан  сургалт зөвлөгөөг залуучууд, өсвөр насныханд тогтмол өгч байна.
+          </Typography>
+          <br/>
+          <Typography textAlign={"justify"} fontSize={15}>
+          Бид үйлчилгээнийхээ нэр төрөл, цар хүрээг жил тутам өргөжүүлж уламжлалыг хадгалж, шинэчиллийг нэвтрүүлэн  2023 оны 12 сард Онлайн хурим зохион байгуулж Франц улсад ажиллаж амьдарч байгаа хосын гэрлэх ёслолын ажиллагааг шууд дамжуулалтаар амжилттай зохион байгуулан ажиллалаа. Мөн Очир-эрдэнийн хурим, Алтан хурим, Мөнгөн хуримын ёслолыг зохион байгуулж, 2024 оноос хуримын тэмдэглэлт ойн Есөн эрдэнийн хуримын ёслолын ажиллагааг шинээр зохион байгуулан ажиллаж байна.
+          </Typography>
+          <br/>
+          <Typography textAlign={"justify"} fontSize={15}>
+	        Гэр бүлийн үнэ цэнэ, тогтвортой байдлыг дэмжин ажиллах, сурталчлах зорилгоор Нийслэлийн ойн баярын өдөр, Олон улсын гэр бүлийн өдрийг тохиолдуулан “Хайрын амлалт”, “Аз жаргалтай гэр бүл”,” Хос багана” гэр бүлийн өдөрлөг арга хэмжээг болон уламжлал болсон ажлуудаа үргэлжлүүлэн шинэчилсээр тогтмолжуулсан. Гэр бүлийн чиглэлээр ажилладаг төрийн болон төрийн бус байгууллагуудтай хамтран ажиллаж гэр бүлд нөлөөлөх нөлөөллийн олон талт үйл ажиллагаа зохион байгуулан ажиллаж байна. Мөн дүүргүүдийн ИТХ, Улсын бүртгэлийн хэлтэсүүдтэй хамтран Гэрлэлтийн гэрчилгээ гардуулах ёслол зохион байгуулж байна.
+          </Typography>
+          <br/>
+          <Typography textAlign={"justify"} fontSize={15}>
+          Манай хамт олон мэргэжлийн түвшинд  таны зол жаргалтай мөчийг мөнхлөн, хэзээч мартагдахгүй нандин дурсамжийг бий болгохын төлөө  хариуцлагатай бөгөөд хүндтэй албыг цаг алдалгүй чанарын өндөр түвшинд гүйцэтгэдэг мэргэшсэн баг хамт олон юм.
+          </Typography>
+          <br/>
+          <Typography textAlign={"justify"} fontSize={15}>
+          Монгол улсын гэр бүл бүхэн түвшин сайхан байж, үйлс мөр нь амжилт бүтээлээр бялхаж, үр хүүхэд, ахан дүүсээ энэрч, амьдрал нь аз жаргалаар гэрэлтэж байхын ерөөлийг өргөн дэвшүүлье.
+          </Typography>
+          <br/>
+          <Typography textAlign={"right"} fontSize={15} marginTop={2}>
+          Хүндэтгэсэн:
+          ГЭРЛЭХ ЁСЛОЛЫН ОРДНЫ ЗАХИРАЛ            М.УЯНГА
+          </Typography>
           </Typography>
         </Grid>
       </Grid>
