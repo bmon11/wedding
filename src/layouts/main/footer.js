@@ -24,7 +24,7 @@ const LINKS = [
     headline: "Хаяг",
     children: [
       {
-        name: "УБ хот,ЧД, 1-р хороо, Шангрилла оффис, 15 давхар",
+        name: "УБ хот, Сүхбаатар дүүрэг, 1-р хороо, П.Гэндэнгийн гудамж",
         href: paths.about,
       },
       // { name: "Contact us", href: paths.contact },
@@ -35,12 +35,12 @@ const LINKS = [
     headline: "Цахим хаяг",
     children: [
       // { name: "Terms and Condition", href: "#" },
-      { name: "Privacy Policy", href: "#" },
+      { name: "Гэрлэх Ёслолын Ордон", href: "#" },
     ],
   },
   {
     headline: "Утас",
-    children: [{ name: "(+976)77777777", href: "#" }],
+    children: [{ name: "11 320515", href: "#" }],
   },
 ];
 

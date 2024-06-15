@@ -20,36 +20,45 @@ export default function PhotoVideoView(params) {
         title={"ФОТО ВИДЕО ҮЙЛЧИЛГЭЭ"}
       />
       <Container>
-        <Stack spacing={2} my={2}>
-          <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
-            Фото, Видео үйлчилгээ
-          </Typography>
-          <Typography textAlign={"justify"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.Sed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-            inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-            aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-            ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-            dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-            quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?
-          </Typography>
-          <CarouselCenterMode data={dataPlaceholder.slice(4, 8)} />
-          <ControlledForm />
+        <Stack spacing={2} my={2} alignItems={'center'}>
+          <Box>
+            <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
+              Фото, Видео үйлчилгээ
+            </Typography>
+            <Typography fontWeight={'bold'}>
+              Фото, видео студи
+            </Typography>
+            <Typography>
+              1. Хуримын ордны зураг <br />
+              2. Хотын болон натур зураг <br />
+              3. Студи зураг
+            </Typography>
+            <Typography fontWeight={'bold'}>
+              Видео
+            </Typography>
+            <Typography>
+              1. Эхлэл шторк видео <br />
+              2. Танилцсан түүх видео <br />
+              3. Талархлын видео <br />
+              4. Background видео <br />
+              5. Photo Slide видео <br />
+              6. Хуримын өдрийн бүрэн видео <br />
+              7. Найзуудын мэндчилгээ видео
+            </Typography>
+            <Typography fontWeight={'bold'}>
+              ФОТО
+            </Typography>
+            <Typography>
+              1. Натур зураг авалт <br />
+              2. Хотын зураг авалт <br />
+              3. Студи зураг авалт <br />
+              4. Хуримын өдрийн зураг авалт <br />
+              5. Хуримын ордны зураг авалт
+            </Typography>
+          </Box>
         </Stack>
+        <CarouselCenterMode data={dataPlaceholder.slice(4, 8)} />
+        <ControlledForm />
       </Container>
     </MainLayout>
   );

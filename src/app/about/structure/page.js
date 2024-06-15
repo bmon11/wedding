@@ -33,7 +33,7 @@ export default function StructurePage(params) {
           </Typography>
           <Image
             src={
-              "https://images.edrawmax.com/what-is/company-organizational-chart/first-img.png"
+              "/assets/images/hr/hr.png"
             }
             ratio={"16/9"}
           />

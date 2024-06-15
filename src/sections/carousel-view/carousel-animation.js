@@ -85,7 +85,7 @@ function CarouselItem({ item, active }) {
         }}
       />
 
-      <CardContent
+      {/* <CardContent
         component={MotionContainer}
         animate={active}
         action
@@ -126,7 +126,7 @@ function CarouselItem({ item, active }) {
             Дэлгэрэнгүй
           </Button>
         </m.div>
-      </CardContent>
+      </CardContent> */}
     </Paper>
   );
 }

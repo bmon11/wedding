@@ -8,16 +8,9 @@ const serviceData = [
   },
   {
     imgURL:
-      "https://cdn0.hitched.co.uk/article/1329/3_2/960/jpg/79231-shutterstock-795958900.jpeg",
-    // imgURL: "/assets/images/home/services/bg_2.jpg",
-    description: "Фото, Видео",
-    nextPath: "/photovideo",
-  },
-  {
-    imgURL:
       "https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2019/7/29/0/Original_Jennie-Andrews-bicycle-wedding-decor.jpg.rend.hgtvcom.1280.1920.suffix/1564403585229.jpeg",
     // imgURL: "/assets/images/home/services/bg_1.jpg",
-    description: "Чимэглэл",
+    description: "Худалдаа",
     nextPath: "/decoration",
   },
   {
@@ -26,6 +19,13 @@ const serviceData = [
     // imgURL: "/assets/images/home/services/bg_2.jpg",
     description: "Түрээс",
     nextPath: "/rent",
+  },
+  {
+    imgURL:
+      "https://cdn0.hitched.co.uk/article/1329/3_2/960/jpg/79231-shutterstock-795958900.jpeg",
+    // imgURL: "/assets/images/home/services/bg_2.jpg",
+    description: "Фото, Видео",
+    nextPath: "/photovideo",
   },
 ];
 

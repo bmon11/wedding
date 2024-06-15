@@ -87,18 +87,18 @@ export default function Header() {
           caption: "This is the caption",
         },
         {
-          title: "Фото, видео",
-          path: "/service/photovideo",
-          caption: "This is the caption",
-        },
-        {
-          title: "Чимэглэл",
+          title: "Худалдаа",
           path: "/service/decoration",
           caption: "This is the caption",
         },
         {
           title: "Түрээсийн үйлчилгээ",
           path: "/service/rent",
+          caption: "This is the caption",
+        },
+        {
+          title: "Фото, видео",
+          path: "/service/photovideo",
           caption: "This is the caption",
         },
       ],
@@ -150,7 +150,7 @@ export default function Header() {
         },
         {
           title: "Санхүүгийн ил тод байдал",
-          path: "https://google.com",
+          path: "https://shilendans.gov.mn/organization/58553?ry=2024",
           // children: [
           //   { title: "Page 2.1", path: "#" },
           //   { title: "Page 2.2", path: "#" },
@@ -173,32 +173,32 @@ export default function Header() {
     {
       title: "ХОЛБОО БАРИХ",
       path: "#",
-      caption: "This is the caption",
-      children: [
-        {
-          title: "Захиалга өгөх",
-          path: "#",
-          caption: "This is the caption",
-        },
-        {
-          title: "Санал хүсэлт",
-          path: "#",
-          // children: [
-          //   { title: "Page 2.1", path: "#" },
-          //   { title: "Page 2.2", path: "#" },
-          //   {
-          //     title: "Page 2.3",
-          //     path: "#",
-          //     children: [
-          //       { title: "Page 2.3.1", path: "#" },
-          //       { title: "Page 2.3.2", path: "#" },
-          //       { title: "Page 2.3.3", path: "#" },
-          //     ],
-          //   },
-          // ],
-        },
-        { title: "Page 3", path: "#" },
-      ],
+      // caption: "This is the caption",
+      // children: [
+      //   {
+      //     title: "Захиалга өгөх",
+      //     path: "#",
+      //     caption: "This is the caption",
+      //   },
+      //   {
+      //     title: "Санал хүсэлт",
+      //     path: "#",
+      //     // children: [
+      //     //   { title: "Page 2.1", path: "#" },
+      //     //   { title: "Page 2.2", path: "#" },
+      //     //   {
+      //     //     title: "Page 2.3",
+      //     //     path: "#",
+      //     //     children: [
+      //     //       { title: "Page 2.3.1", path: "#" },
+      //     //       { title: "Page 2.3.2", path: "#" },
+      //     //       { title: "Page 2.3.3", path: "#" },
+      //     //     ],
+      //     //   },
+      //     // ],
+      //   },
+      //   { title: "Page 3", path: "#" },
+      // ],
     },
   ];
 
