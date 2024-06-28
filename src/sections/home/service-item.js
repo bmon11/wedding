@@ -34,11 +34,16 @@ export default function ServiceItem(params) {
         <Grid container spacing={3}>
           {[0, 1, 2, 3].map((value) => (
             <Grid item key={value} xs={6} md={3}>
-              <Button href={`/service/${serviceData[value].nextPath}`}>
+              <Button
+                sx={{
+                  width: "100%",
+                }}
+                href={`/service/${serviceData[value].nextPath}`}
+              >
                 <Paper
                   sx={{
                     textAlign: "center",
-                    minWidth: 250,
+                    minWidth: "100%",
                     // border: 1,
                     // borderRadius: 0,
                   }}

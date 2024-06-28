@@ -22,7 +22,7 @@ export default function NewsItem() {
 
       <Grid container spacing={3}>
         {[0, 1, 2].map((value) => (
-          <Grid item key={value} xs={4}>
+          <Grid item key={value} xs={12} md={4}>
             <MediaCard
               title={newsData[value].title}
               timestamp={newsData[value].timestamp}
