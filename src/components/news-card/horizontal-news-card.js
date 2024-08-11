@@ -76,6 +76,7 @@ export default function HorizontalNewsCard({
           >
             ↪
           </Button>
+
           {/* <Link href={`/news/${id}`}>↪</Link> */}
         </CardContent>
       </Box>

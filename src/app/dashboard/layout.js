@@ -2,17 +2,16 @@
 
 import PropTypes from "prop-types";
 
-import AuthGuard from "src/auth/guard";
+import { AuthGuard } from "src/auth/guard";
 import DashboardLayout from "src/layouts/dashboard";
 
 // ----------------------------------------------------------------------
 
 export default function Layout({ children }) {
   return (
-    // <AuthGuard>
-    "jojo"
-    /* <DashboardLayout>{children}</DashboardLayout> */
-    // </AuthGuard>
+    <AuthGuard>
+      <DashboardLayout>{children}</DashboardLayout>
+    </AuthGuard>
   );
 }
 

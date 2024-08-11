@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import PropTypes from 'prop-types';
-import { useMemo, useEffect, useReducer, useCallback } from 'react';
+import PropTypes from "prop-types";
+import { useMemo, useEffect, useReducer, useCallback } from "react";
 
-import axios, { endpoints } from 'src/utils/axios';
+import axios, { endpoints } from "src/utils/axios";
 
-import { AuthContext } from './auth-context';
-import { setSession, isValidToken } from './utils';
+import { AuthContext } from "./auth-context";
+import { setSession, isValidToken } from "./utils";
 
 // ----------------------------------------------------------------------
 /**
@@ -22,25 +22,25 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  if (action.type === 'INITIAL') {
+  if (action.type === "INITIAL") {
     return {
       loading: false,
       user: action.payload.user,
     };
   }
-  if (action.type === 'LOGIN') {
+  if (action.type === "LOGIN") {
     return {
       ...state,
       user: action.payload.user,
     };
   }
-  if (action.type === 'REGISTER') {
+  if (action.type === "REGISTER") {
     return {
       ...state,
       user: action.payload.user,
     };
   }
-  if (action.type === 'LOGOUT') {
+  if (action.type === "LOGOUT") {
     return {
       ...state,
       user: null,
@@ -51,7 +51,7 @@ const reducer = (state, action) => {
 
 // ----------------------------------------------------------------------
 
-const STORAGE_KEY = 'accessToken';
+const STORAGE_KEY = "accessToken";
 
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -68,7 +68,7 @@ export function AuthProvider({ children }) {
         const { user } = response.data;
 
         dispatch({
-          type: 'INITIAL',
+          type: "INITIAL",
           payload: {
             user: {
               ...user,
@@ -78,7 +78,7 @@ export function AuthProvider({ children }) {
         });
       } else {
         dispatch({
-          type: 'INITIAL',
+          type: "INITIAL",
           payload: {
             user: null,
           },
@@ -87,7 +87,7 @@ export function AuthProvider({ children }) {
     } catch (error) {
       console.error(error);
       dispatch({
-        type: 'INITIAL',
+        type: "INITIAL",
         payload: {
           user: null,
         },
@@ -107,13 +107,14 @@ export function AuthProvider({ children }) {
     };
 
     const response = await axios.post(endpoints.auth.login, data);
+    console.log(response.data);
 
     const { accessToken, user } = response.data;
 
     setSession(accessToken);
 
     dispatch({
-      type: 'LOGIN',
+      type: "LOGIN",
       payload: {
         user: {
           ...user,
@@ -139,7 +140,7 @@ export function AuthProvider({ children }) {
     sessionStorage.setItem(STORAGE_KEY, accessToken);
 
     dispatch({
-      type: 'REGISTER',
+      type: "REGISTER",
       payload: {
         user: {
           ...user,
@@ -153,23 +154,23 @@ export function AuthProvider({ children }) {
   const logout = useCallback(async () => {
     setSession(null);
     dispatch({
-      type: 'LOGOUT',
+      type: "LOGOUT",
     });
   }, []);
 
   // ----------------------------------------------------------------------
 
-  const checkAuthenticated = state.user ? 'authenticated' : 'unauthenticated';
+  const checkAuthenticated = state.user ? "authenticated" : "unauthenticated";
 
-  const status = state.loading ? 'loading' : checkAuthenticated;
+  const status = state.loading ? "loading" : checkAuthenticated;
 
   const memoizedValue = useMemo(
     () => ({
       user: state.user,
-      method: 'jwt',
-      loading: status === 'loading',
-      authenticated: status === 'authenticated',
-      unauthenticated: status === 'unauthenticated',
+      method: "jwt",
+      loading: status === "loading",
+      authenticated: status === "authenticated",
+      unauthenticated: status === "unauthenticated",
       //
       login,
       register,
@@ -178,7 +179,11 @@ export function AuthProvider({ children }) {
     [login, logout, register, state.user, status]
   );
 
-  return <AuthContext.Provider value={memoizedValue}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={memoizedValue}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 AuthProvider.propTypes = {

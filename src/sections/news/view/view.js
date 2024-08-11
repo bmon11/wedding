@@ -1,15 +1,15 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import MainLayout from "src/layouts/main";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import HorizontalNewsCard from "src/components/news-card/horizontal-news-card";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import Button from "@mui/material/Button";
 import Image from "src/components/image/image";
 
@@ -18,10 +18,24 @@ import { useResponsive } from "src/hooks/use-responsive";
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
 import data from "src/sections/individual-news/data-placeholder";
+import axios, { endpoints } from "src/utils/axios";
 
 export default function NewsView(params) {
   const mdUp = useResponsive("up", "md");
-  const dataObj = Object.values(data);
+
+  const [newsData, setNewsData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/news/list");
+        setNewsData(response.data.body);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <MainLayout>
@@ -50,14 +64,14 @@ export default function NewsView(params) {
         <Grid container>
           <Grid item key={"0"} md={8}>
             <Stack spacing={2}>
-              {dataObj.map((item) => (
+              {newsData.map((item, index) => (
                 <HorizontalNewsCard
                   id={item.id}
                   key={item.id}
-                  imgURL={item.imgURL}
+                  imgURL={item.thumbnail_url}
                   title={item.title}
                   content={item.subtitle}
-                  timestamp={item.timestamp}
+                  timestamp={item.createdDate.split("T")[0]}
                 />
               ))}
             </Stack>

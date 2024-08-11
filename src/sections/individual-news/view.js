@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import MainLayout from "src/layouts/main";
 import HeroImage from "src/components/image/hero-image";
 import {
@@ -14,10 +15,33 @@ import {
 import Image from "src/components/image/image";
 import data from "./data-placeholder";
 import { useResponsive } from "src/hooks/use-responsive";
+import axios from "src/utils/axios";
+import { useRouter } from "src/routes/hooks";
+import { useAuthContext } from "src/auth/hooks";
 
 export default function IndividualNewsView({ id }) {
+  const router = useRouter();
   const dataObj = data[id];
   const mdUp = useResponsive("up", "md");
+  const [newsData, setNewsData] = useState();
+  const authenticated = useAuthContext();
+
+  const handleRedirect = () => {
+    router.replace("/news");
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/news/${id}`);
+        // console.log("response is", response.data.body);
+        setNewsData(response.data.body);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <MainLayout>
@@ -46,11 +70,40 @@ export default function IndividualNewsView({ id }) {
         <Grid container>
           <Grid item key={"0"} md={8}>
             <Stack spacing={2}>
-              <Image src={dataObj.imgURL} ratio={"16/9"} />
-              <Typography>{dataObj.timestamp}</Typography>
-              <Typography variant="h6">{dataObj.title}</Typography>
-              <Typography textAlign={"justify"}>{dataObj.content}</Typography>
+              {newsData && (
+                <>
+                  <Image src={newsData.thumbnail_url} ratio={"16/9"} />
+                  <Typography>{newsData.createdDate.split("T")[0]}</Typography>
+                  <Typography variant="h6">{newsData.title}</Typography>
+                  <Typography
+                    textAlign={"justify"}
+                    dangerouslySetInnerHTML={{ __html: newsData.body }}
+                  />
+                </>
+              )}
             </Stack>
+            <Box display={"flex"} justifyContent={"space-between"}>
+              <Button
+                sx={{ marginTop: 2 }}
+                variant="contained"
+                onClick={handleRedirect}
+              >
+                Буцах
+              </Button>
+              {authenticated.authenticated && (
+                <Button
+                  sx={{
+                    marginTop: 2,
+                    color: "white",
+                    bgcolor: "red",
+                    alignSelf: "flex-end",
+                  }}
+                  variant="contained"
+                >
+                  Устгах
+                </Button>
+              )}
+            </Box>
           </Grid>
           {mdUp && (
             <Grid item key={"1"} md={4}>
