@@ -17,7 +17,6 @@ import HeroImage from "src/components/image/hero-image";
 import { useResponsive } from "src/hooks/use-responsive";
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
-import data from "src/sections/individual-news/data-placeholder";
 import axios, { endpoints } from "src/utils/axios";
 
 export default function NewsView(params) {
@@ -64,7 +63,7 @@ export default function NewsView(params) {
         <Grid container>
           <Grid item key={"0"} md={8}>
             <Stack spacing={2}>
-              {newsData.map((item, index) => (
+              {newsData.map((item) => (
                 <HorizontalNewsCard
                   id={item.id}
                   key={item.id}

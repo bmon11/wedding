@@ -15,93 +15,92 @@ export default function DecorationView(params) {
           "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
         }
         description={
-          "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style."
+          "Машины чимэглэл, Гэрчийн даашинз, Хуримын даашинз түрээс худалдаа"
         }
         title={"Худалдаа үйлчилгээ"}
       />
       <Container>
-        <Stack spacing={2} my={2} alignItems={"center"} >
+        <Stack spacing={2} my={2} alignItems={"center"}>
           <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
             Худалдаа үйлчилгээ
           </Typography>
           <Box>
-            <Typography fontWeight={'bold'} textAlign={"left"} marginY={'7px'}>
+            <Typography fontWeight={"bold"} textAlign={"left"} marginY={"7px"}>
               Сүйт бүсгүй:
             </Typography>
-            <Typography textAlign={"left"} marginY={'7px'}>
-              1.	Даашинз
+            <Typography textAlign={"left"} marginY={"7px"}>
+              1. Даашинз
               <br />
-              2.	Туслах хэрэгсэл
+              2. Туслах хэрэгсэл
               <br />
             </Typography>
-            <Typography textAlign={"left"} marginY={'7px'}>
-              a.	Гивлүүр
+            <Typography textAlign={"left"} marginY={"7px"}>
+              a. Гивлүүр
               <br />
-              b.	Титэм
+              b. Титэм
               <br />
-              c.	Толгойн гоёл
+              c. Толгойн гоёл
               <br />
-              d.	Ээмэг
+              d. Ээмэг
               <br />
-              e.	Зүүлт
+              e. Зүүлт
               <br />
-              f.	Бээлий
+              f. Бээлий
               <br />
-              g.	Хормой
+              g. Хормой
               <br />
-              h.	Малгай
+              h. Малгай
               <br />
-              i.	Сүйт бүсгүйн гарын цэцэг
+              i. Сүйт бүсгүйн гарын цэцэг
             </Typography>
 
-            <Typography fontWeight={'bold'} marginY={'7px'}>
+            <Typography fontWeight={"bold"} marginY={"7px"}>
               Сүйт залуу:
             </Typography>
             <Typography>
-              1.	Зангиа
+              1. Зангиа
               <br />
-              2.	Зангиан ком
+              2. Зангиан ком
               <br />
-              3.	Энгэрийн цэцэг
+              3. Энгэрийн цэцэг
             </Typography>
-            <Typography fontWeight={'bold'} marginY={'7px'}>
+            <Typography fontWeight={"bold"} marginY={"7px"}>
               Гэрч бүсгүйчүүд:
             </Typography>
             <Typography>
-              1.	Даашинз
+              1. Даашинз
               <br />
-              2.	Тогойн гоёл
+              2. Тогойн гоёл
               <br />
-              3.	Бугуйн цэцэг
+              3. Бугуйн цэцэг
               <br />
-              4.	Гарын цэцэг
+              4. Гарын цэцэг
               <br />
-              5.	Бээлий
+              5. Бээлий
               <br />
-              6.	Шүхэр
+              6. Шүхэр
               <br />
-              7.	Дэвүүр
+              7. Дэвүүр
             </Typography>
 
-            <Typography fontWeight={'bold'} marginY={'7px'}>
+            <Typography fontWeight={"bold"} marginY={"7px"}>
               Гэрч залуучууд:
             </Typography>
             <Typography>
-              1.	Зангиа /урт/
+              1. Зангиа /урт/
               <br />
-              2.	Зангий /эрвээхий/
+              2. Зангий /эрвээхий/
               <br />
-              3.	Зангий ком /ойм, зангиа, энгэрийн чимэглэл,
+              3. Зангий ком /ойм, зангиа, энгэрийн чимэглэл,
               <br /> мөрөвч, запник, зангиа хавчаар/
               <br />
-              4.	Энгэрийн цэцэг
+              4. Энгэрийн цэцэг
             </Typography>
           </Box>
-
         </Stack>
         <CarouselCenterMode data={dataPlaceholder.slice(0, 4)} />
         <ControlledForm />
-      </Container >
-    </MainLayout >
+      </Container>
+    </MainLayout>
   );
 }

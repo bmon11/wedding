@@ -13,7 +13,6 @@ import {
   Button,
 } from "@mui/material";
 import Image from "src/components/image/image";
-import data from "./data-placeholder";
 import { useResponsive } from "src/hooks/use-responsive";
 import axios from "src/utils/axios";
 import { useRouter } from "src/routes/hooks";
@@ -21,7 +20,6 @@ import { useAuthContext } from "src/auth/hooks";
 
 export default function IndividualNewsView({ id }) {
   const router = useRouter();
-  const dataObj = data[id];
   const mdUp = useResponsive("up", "md");
   const [newsData, setNewsData] = useState();
   const authenticated = useAuthContext();
@@ -34,7 +32,6 @@ export default function IndividualNewsView({ id }) {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/news/${id}`);
-        // console.log("response is", response.data.body);
         setNewsData(response.data.body);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -42,6 +39,21 @@ export default function IndividualNewsView({ id }) {
     };
     fetchData();
   }, []);
+
+  const deleteData = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.delete(`/api/news/?id=${id}`);
+
+      if (response.status === 200) {
+        router.replace("/news");
+      } else {
+        console.log("Error deleting data:", response);
+      }
+    } catch (error) {
+      console.log("Error deleting data:", error);
+    }
+  };
 
   return (
     <MainLayout>
@@ -99,6 +111,7 @@ export default function IndividualNewsView({ id }) {
                     alignSelf: "flex-end",
                   }}
                   variant="contained"
+                  onClick={deleteData}
                 >
                   Устгах
                 </Button>

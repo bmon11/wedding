@@ -79,39 +79,39 @@ export default function Header() {
     {
       title: "ҮЙЛЧИЛГЭЭ",
       path: "#",
-      caption: "This is the caption",
+      caption: "",
       children: [
         {
           title: "Зохион байгуулах",
           path: "/service/arrangement",
-          caption: "This is the caption",
+          caption: "",
         },
         {
           title: "Худалдаа",
           path: "/service/decoration",
-          caption: "This is the caption",
+          caption: "",
         },
         {
           title: "Түрээсийн үйлчилгээ",
           path: "/service/rent",
-          caption: "This is the caption",
+          caption: "",
         },
         {
           title: "Фото, видео",
           path: "/service/photovideo",
-          caption: "This is the caption",
+          caption: "",
         },
       ],
     },
     {
       title: "МЭДЭЭЛЭЛ",
       path: "/news",
-      caption: "This is the caption",
+      // caption: "This is the caption",
       children: [
         {
           title: "Эмэгтэйчүүд",
           path: "#",
-          caption: "This is the caption",
+          caption: "",
         },
         {
           title: "Эрчүүд",
@@ -137,12 +137,12 @@ export default function Header() {
     {
       title: "ИЛ ТОД БАЙДАЛ",
       path: "#",
-      caption: "This is the caption",
+      // caption: "This is the caption",
       children: [
         {
           title: "Байгууллагын ил тод байдал",
           path: "/transparency",
-          caption: "This is the caption",
+          // caption: "This is the caption",
           // children: [
           //   { title: "Page 1.1", path: "#" },
           //   { title: "Page 1.2", path: "#" },
@@ -167,7 +167,6 @@ export default function Header() {
         },
         { title: "Хүний нөөцийн ил тод байдал", path: "/transparency/hr" },
         { title: "Хууль, эрх зүй, дүрэм журам", path: "/transparency/law" },
-        { title: "Өргөдөл гомдлын шийдвэрлэлт", path: "#" },
       ],
     },
     {

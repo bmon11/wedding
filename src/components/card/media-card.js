@@ -5,8 +5,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { RouterLink } from "src/routes/components";
 
-export default function MediaCard({ title, timestamp, body, imgURL }) {
+export default function MediaCard({ id, title, timestamp, body, imgURL }) {
   return (
     <Card sx={{ maxWidth: 345, margin: "auto" }}>
       <CardMedia sx={{ height: 240 }} image={imgURL} title={title} />
@@ -22,7 +23,12 @@ export default function MediaCard({ title, timestamp, body, imgURL }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="medium" variant="outlined">
+        <Button
+          size="medium"
+          variant="outlined"
+          component={RouterLink}
+          href={`/news/${id}`}
+        >
           Дэлгэрэнгүй
         </Button>
       </CardActions>

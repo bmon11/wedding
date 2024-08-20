@@ -14,28 +14,22 @@ export default function PhotoVideoView(params) {
         imgURL={
           "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
         }
-        description={
-          "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style."
-        }
+        description={"Гэр бүлийн зураг авалт, Хуримын зураг авалт"}
         title={"ФОТО ВИДЕО ҮЙЛЧИЛГЭЭ"}
       />
       <Container>
-        <Stack spacing={2} my={2} alignItems={'center'}>
+        <Stack spacing={2} my={2} alignItems={"center"}>
           <Box>
             <Typography variant="h2" fontWeight={"bold"} textAlign={"center"}>
               Фото, Видео үйлчилгээ
             </Typography>
-            <Typography fontWeight={'bold'}>
-              Фото, видео студи
-            </Typography>
+            <Typography fontWeight={"bold"}>Фото, видео студи</Typography>
             <Typography>
               1. Хуримын ордны зураг <br />
               2. Хотын болон натур зураг <br />
               3. Студи зураг
             </Typography>
-            <Typography fontWeight={'bold'}>
-              Видео
-            </Typography>
+            <Typography fontWeight={"bold"}>Видео</Typography>
             <Typography>
               1. Эхлэл шторк видео <br />
               2. Танилцсан түүх видео <br />
@@ -45,9 +39,7 @@ export default function PhotoVideoView(params) {
               6. Хуримын өдрийн бүрэн видео <br />
               7. Найзуудын мэндчилгээ видео
             </Typography>
-            <Typography fontWeight={'bold'}>
-              ФОТО
-            </Typography>
+            <Typography fontWeight={"bold"}>ФОТО</Typography>
             <Typography>
               1. Натур зураг авалт <br />
               2. Хотын зураг авалт <br />

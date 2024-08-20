@@ -19,17 +19,25 @@ export default function HeroImageService({ imgURL, title, description }) {
             sx={{
               zIndex: 1,
               width: 1,
-              padding: 2,
-              position: "absolute",
-              ...bgGradient({
-                direction: "to right",
-                startColor: `${theme.palette.grey[800]} 00%`,
-                endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
-              }),
-              transform: "translate(0px,-128px)",
+
+              padding: (-1, 0),
+              position: "relative",
             }}
           >
-            <Container padding={2}>
+            <Container
+              padding={2}
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                padding: 2,
+
+                ...bgGradient({
+                  direction: "to right",
+                  startColor: `${theme.palette.grey[800]} 00%`,
+                  endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
+                }),
+              }}
+            >
               <Typography
                 color={theme.palette.common.white}
                 fontSize={"2rem"}
@@ -52,17 +60,24 @@ export default function HeroImageService({ imgURL, title, description }) {
               zIndex: 1,
               width: 1,
 
-              padding: 2,
-              position: "absolute",
-              ...bgGradient({
-                direction: "to right",
-                startColor: `${theme.palette.grey[800]} 00%`,
-                endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
-              }),
-              transform: "translate(0px,-116px)",
+              padding: (-1, 0),
+              position: "relative",
             }}
           >
-            <Container padding={2}>
+            <Container
+              padding={2}
+              sx={{
+                position: "absolute",
+                bottom: 0,
+                padding: 2,
+
+                ...bgGradient({
+                  direction: "to right",
+                  startColor: `${theme.palette.grey[800]} 00%`,
+                  endColor: `${alpha(theme.palette.grey[800], 0.1)} 70%`,
+                }),
+              }}
+            >
               <Typography
                 color={theme.palette.common.white}
                 fontSize={"1.5rem"}
