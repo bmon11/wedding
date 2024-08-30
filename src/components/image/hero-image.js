@@ -18,7 +18,7 @@ export default function HeroImage({ imgURL, title, description }) {
         </Image>
       )}
       {!mdUp && <Image src={imgURL} ratio={"4/3"} />}
-      {mdUp && (
+      {/* {mdUp && (
         <CardContent
           sx={{
             left: "18%",
@@ -38,9 +38,9 @@ export default function HeroImage({ imgURL, title, description }) {
           </Typography>
           <Typography color={"common.white"}>{description}</Typography>
         </CardContent>
-      )}
+      )} */}
 
-      {!mdUp && (
+      {/* {!mdUp && (
         <CardContent
           sx={{
             left: "18%",
@@ -58,7 +58,7 @@ export default function HeroImage({ imgURL, title, description }) {
             {description.slice(0, 75) + "..."}
           </Typography>
         </CardContent>
-      )}
+      )} */}
     </>
   );
 }

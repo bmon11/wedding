@@ -344,15 +344,29 @@ export default function Header() {
             alignItems="center"
             direction={{ xs: "row", md: "row-reverse" }}
           >
-            <Button
-              variant="contained"
-              target="_blank"
-              rel="noopener"
-              href={paths.minimalUI}
-              sx={{ ml: 5, px: 2 }}
-            >
-              ЗАХИАЛГА ӨГӨХ
-            </Button>
+            {mdUp && (
+              <Button
+                variant="contained"
+                target="_blank"
+                rel="noopener"
+                href={paths.order}
+                sx={{ ml: 5, px: 1 }}
+              >
+                ЗАХИАЛГА ӨГӨХ
+              </Button>
+            )}
+
+            {!mdUp && (
+              <Button
+                variant="contained"
+                target="_blank"
+                rel="noopener"
+                href={paths.order}
+                sx={{ ml: 5 }}
+              >
+                ЗАХИАЛГА ӨГӨХ
+              </Button>
+            )}
 
             {/* {mdUp && <LoginButton />} */}
 

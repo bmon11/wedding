@@ -19,7 +19,7 @@ export default function NewsItem() {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get("/api/news/list");
-        setNewsData(response.data.body);
+        setNewsData(response.data.body.reverse());
         console.log(newsData);
       } catch (error) {
         console.log("Error fetching data:", error);

@@ -31,7 +31,11 @@ export default function IndividualNewsView({ id }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log(`view individual-news calls ${id}`);
         const response = await axios.get(`/api/news/${id}`);
+
+        console.log("response", response.data.body);
+
         setNewsData(response.data.body);
       } catch (error) {
         console.log("Error fetching data:", error);

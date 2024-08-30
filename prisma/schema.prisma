@@ -29,4 +29,5 @@ model Blog{
   thumbnail_url  String @db.Text
   is_published   Int
   createdDate    DateTime
+  type           Int @default(0)
 }

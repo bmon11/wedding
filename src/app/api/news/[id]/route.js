@@ -6,24 +6,26 @@ import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
 
-export async function GET(request) {
-  const { id } = request;
+export async function GET(request, { params }) {
+  const { id } = params;
 
   try {
     const blog = await prisma.blog.findFirst({
       where: {
-        id: id,
+        id: parseInt(id),
       },
     });
+
     if (blog) {
       return NextResponse.json(
         { message: "Succeeded", body: blog },
         { status: 200 }
       );
     } else {
-      return NextResponse.json({ message: "Not found" }), { status: 404 };
+      return NextResponse.json({ message: "Not found" }, { status: 404 });
     }
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ message: "Internal error" }, { status: 500 });
   } finally {
     await prisma.$disconnect();

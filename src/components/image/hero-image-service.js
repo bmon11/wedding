@@ -1,7 +1,6 @@
 import Image from "./image";
 import Typography from "@mui/material/Typography";
 import { useResponsive } from "src/hooks/use-responsive";
-import CardContent from "@mui/material/CardContent";
 import { Box, Container } from "@mui/material";
 import { bgGradient } from "src/theme/css";
 import { alpha, useTheme } from "@mui/material/styles";
@@ -24,7 +23,7 @@ export default function HeroImageService({ imgURL, title, description }) {
               position: "relative",
             }}
           >
-            <Container
+            {/* <Container
               padding={2}
               sx={{
                 position: "absolute",
@@ -48,7 +47,7 @@ export default function HeroImageService({ imgURL, title, description }) {
               <Typography color={"white"} sx={{ maxWidth: 540 }}>
                 {description}
               </Typography>
-            </Container>
+            </Container> */}
           </Box>
         </Box>
       )}
@@ -64,7 +63,7 @@ export default function HeroImageService({ imgURL, title, description }) {
               position: "relative",
             }}
           >
-            <Container
+            {/* <Container
               padding={2}
               sx={{
                 position: "absolute",
@@ -88,7 +87,7 @@ export default function HeroImageService({ imgURL, title, description }) {
               <Typography color={"white"} sx={{ maxWidth: 540 }}>
                 {description.slice(0, 75) + "..."}
               </Typography>
-            </Container>
+            </Container> */}
           </Box>
         </Box>
       )}

@@ -11,7 +11,7 @@ export const paths = {
   about: "/about",
   contact: "/contact",
   faqs: "/faqs",
-  minimalUI: "https://mui.com/store/items/minimal-dashboard/",
+  order: "/maintenance",
   // AUTH
   auth: {
     jwt: {

@@ -13,7 +13,8 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { title, editorContent, thumbnail_url, isPublished, subtitle } = body;
+    const { title, editorContent, thumbnail_url, isPublished, subtitle, type } =
+      body;
 
     const numericalBool = isPublished ? 1 : 0;
     const newBlog = await prisma.blog.create({
@@ -24,6 +25,7 @@ export async function POST(request) {
         thumbnail_url: thumbnail_url,
         is_published: numericalBool,
         createdDate: new Date(),
+        type: type,
       },
     });
 

@@ -5,6 +5,7 @@ import MainLayout from "src/layouts/main";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import CircularProgress from "@mui/material/CircularProgress";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import HorizontalNewsCard from "src/components/news-card/horizontal-news-card";
@@ -12,29 +13,42 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
 import Image from "src/components/image/image";
-
 import HeroImage from "src/components/image/hero-image";
 import { useResponsive } from "src/hooks/use-responsive";
+
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
 import axios, { endpoints } from "src/utils/axios";
+import { handleClientScriptLoad } from "next/script";
 
 export default function NewsView(params) {
   const mdUp = useResponsive("up", "md");
-
   const [newsData, setNewsData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedType, setSelectedType] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/api/news/list");
-        setNewsData(response.data.body);
+        setNewsData(response.data.body.reverse());
       } catch (error) {
         console.log("Error fetching data:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchData();
   }, []);
+
+  const handeTypeClick = (type) => {
+    setSelectedType(type);
+  };
+
+  const filteredNewsData =
+    selectedType !== null
+      ? newsData.filter((item) => item.type === selectedType)
+      : newsData;
 
   return (
     <MainLayout>
@@ -52,27 +66,49 @@ export default function NewsView(params) {
         {!mdUp && (
           <Box sx={{ my: 4 }}>
             <Typography variant="h5">Мэдээний төрөл</Typography>
-            <Stack direction={"row"}>
-              <Button>• Эмэгтэйчүүд</Button>
-              <Button>• Эрчүүд</Button>
-              <Button>• Энтертайнмэнт</Button>
-              <Button>• Ёс заншил</Button>
-            </Stack>
+            <List dense>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(0)}>• Эмэгтэйчүүд</Button>
+              </ListItem>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(1)}>• Эрчүүд</Button>
+              </ListItem>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(2)}>
+                  • Энтертайнмэнт
+                </Button>
+              </ListItem>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(3)}>• Ёс заншил</Button>
+              </ListItem>
+            </List>
           </Box>
         )}
         <Grid container>
           <Grid item key={"0"} md={8}>
             <Stack spacing={2}>
-              {newsData.map((item) => (
-                <HorizontalNewsCard
-                  id={item.id}
-                  key={item.id}
-                  imgURL={item.thumbnail_url}
-                  title={item.title}
-                  content={item.subtitle}
-                  timestamp={item.createdDate.split("T")[0]}
-                />
-              ))}
+              {isLoading ? (
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <CircularProgress />
+                </Box>
+              ) : (
+                filteredNewsData.map((item) => (
+                  <HorizontalNewsCard
+                    id={item.id}
+                    key={item.id}
+                    imgURL={item.thumbnail_url}
+                    title={item.title}
+                    content={item.subtitle}
+                    timestamp={item.createdDate.split("T")[0]}
+                  />
+                ))
+              )}
             </Stack>
           </Grid>
           {mdUp && (
@@ -84,16 +120,24 @@ export default function NewsView(params) {
                       <Typography variant="h5">Мэдээний төрөл</Typography>
                     </ListItem>
                     <ListItem>
-                      <Button>• Эмэгтэйчүүд</Button>
+                      <Button onClick={() => handeTypeClick(0)}>
+                        • Эмэгтэйчүүд
+                      </Button>
                     </ListItem>
                     <ListItem>
-                      <Button>• Эрчүүд</Button>
+                      <Button onClick={() => handeTypeClick(1)}>
+                        • Эрчүүд
+                      </Button>
                     </ListItem>
                     <ListItem>
-                      <Button>• Энтертайнмэнт</Button>
+                      <Button onClick={() => handeTypeClick(2)}>
+                        • Энтертайнмэнт
+                      </Button>
                     </ListItem>
                     <ListItem>
-                      <Button>• Ёс заншил</Button>
+                      <Button onClick={() => handeTypeClick(3)}>
+                        • Ёс заншил
+                      </Button>
                     </ListItem>
                   </List>
                 </Box>

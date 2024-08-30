@@ -15,6 +15,8 @@ import {
   Typography,
   FormControlLabel,
   Checkbox,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 // import { Editor } from "@tinymce/tinymce-react";
@@ -35,6 +37,8 @@ const EditorView = () => {
   const [editorContent, setEditorContent] = useState(
     "Create your news content here"
   );
+  const [type, setType] = useState(0);
+
   // const [isEditorLoaded, setIsEditorLoaded] = useState(false);
 
   // // Effects
@@ -51,6 +55,11 @@ const EditorView = () => {
     setIsPublished(!isPublished);
   };
 
+  const handleChange = (e) => {
+    console.log("e is ", e);
+    setType(e.target.value);
+  };
+
   const submitData = async (e) => {
     e.preventDefault();
     try {
@@ -60,6 +69,7 @@ const EditorView = () => {
         thumbnail_url,
         isPublished,
         subtitle,
+        type,
       };
       const res = await fetch("/api/createNews", {
         method: "POST",
@@ -87,7 +97,7 @@ const EditorView = () => {
           </Typography>
           <form onSubmit={submitData}>
             <FormControl fullWidth margin="normal">
-              <InputLabel htmlFor="title">Title</InputLabel>
+              <InputLabel htmlFor="title">Гарчиг</InputLabel>
               <Input
                 id="title"
                 aria-describedby="helper text"
@@ -97,7 +107,7 @@ const EditorView = () => {
               />
             </FormControl>
             <FormControl fullWidth margin="normal">
-              <InputLabel htmlFor="subtitle">Subtitle</InputLabel>
+              <InputLabel htmlFor="subtitle">Дэд гарчиг</InputLabel>
               <Input
                 id="subtitle"
                 type="text"
@@ -142,7 +152,21 @@ const EditorView = () => {
               value={editorContent}
               onEditorChange={handleEditorChange}
             />
-            {/* )} */}
+            <FormControl sx={{ marginY: "15px" }} fullWidth>
+              <InputLabel id="blog-type">Төрөл</InputLabel>
+              <Select
+                labelId="blog-type"
+                id="blog-type"
+                value={type}
+                label="blog type"
+                onChange={handleChange}
+              >
+                <MenuItem value={0}>Эрэгтэй</MenuItem>
+                <MenuItem value={1}>Эмэгтэй</MenuItem>
+                <MenuItem value={2}>Энтертайнмэнт</MenuItem>
+                <MenuItem value={3}>Ёс заншил</MenuItem>
+              </Select>
+            </FormControl>
 
             <FormControlLabel
               control={
@@ -155,6 +179,7 @@ const EditorView = () => {
               }
               label="Publish"
             />
+
             <Button
               type="submit"
               variant="contained"
