@@ -31,7 +31,6 @@ export default function IndividualNewsView({ id }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(`view individual-news calls ${id}`);
         const response = await axios.get(`/api/news/${id}`);
 
         console.log("response", response.data.body);

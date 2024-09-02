@@ -4,14 +4,12 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "src/routes/hooks";
 import { AuthGuard } from "src/auth/guard";
 
-// import EditorApp from "../../components/editor/editor";
 import MainLayout from "src/layouts/main";
 import {
   Container,
   Input,
   InputLabel,
   Button,
-  FormHelperText,
   Typography,
   FormControlLabel,
   Checkbox,
@@ -19,7 +17,6 @@ import {
   MenuItem,
 } from "@mui/material";
 import FormControl from "@mui/material/FormControl";
-// import { Editor } from "@tinymce/tinymce-react";
 import dynamic from "next/dynamic";
 
 const Editor = dynamic(

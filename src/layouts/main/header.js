@@ -107,32 +107,32 @@ export default function Header() {
       title: "МЭДЭЭЛЭЛ",
       path: "/news",
       // caption: "This is the caption",
-      children: [
-        {
-          title: "Эмэгтэйчүүд",
-          path: "#",
-          caption: "",
-        },
-        {
-          title: "Эрчүүд",
-          path: "#",
-          // children: [
-          //   { title: "Page 2.1", path: "#" },
-          //   { title: "Page 2.2", path: "#" },
-          //   {
-          //     title: "Page 2.3",
-          //     path: "#",
-          //     children: [
-          //       { title: "Page 2.3.1", path: "#" },
-          //       { title: "Page 2.3.2", path: "#" },
-          //       { title: "Page 2.3.3", path: "#" },
-          //     ],
-          //   },
-          // ],
-        },
-        { title: "Энтертайнмэнт", path: "#" },
-        { title: "Ёс заншил", path: "#" },
-      ],
+      // children: [
+      //   {
+      //     title: "Эмэгтэйчүүд",
+      //     path: "#",
+      //     caption: "",
+      //   },
+      //   {
+      //     title: "Эрчүүд",
+      //     path: "#",
+      //     // children: [
+      //     //   { title: "Page 2.1", path: "#" },
+      //     //   { title: "Page 2.2", path: "#" },
+      //     //   {
+      //     //     title: "Page 2.3",
+      //     //     path: "#",
+      //     //     children: [
+      //     //       { title: "Page 2.3.1", path: "#" },
+      //     //       { title: "Page 2.3.2", path: "#" },
+      //     //       { title: "Page 2.3.3", path: "#" },
+      //     //     ],
+      //     //   },
+      //     // ],
+      //   },
+      //   { title: "Энтертайнмэнт", path: "#" },
+      //   { title: "Ёс заншил", path: "#" },
+      // ],
     },
     {
       title: "ИЛ ТОД БАЙДАЛ",
@@ -364,7 +364,9 @@ export default function Header() {
                 href={paths.order}
                 sx={{ ml: 5 }}
               >
-                ЗАХИАЛГА ӨГӨХ
+                <Typography variant="p" fontSize={10}>
+                  ЗАХИАЛГА ӨГӨХ
+                </Typography>
               </Button>
             )}
 
