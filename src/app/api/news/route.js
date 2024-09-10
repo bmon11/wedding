@@ -21,6 +21,39 @@ export async function GET(request) {
   }
 }
 
+export async function POST(request) {
+  const searchParams = request.nextUrl.searchParams;
+  const id = parseInt(searchParams.get("id"));
+  const body = await request.json();
+  const { title, editorContent, thumbnail_url, isPublished, subtitle, type } =
+    body;
+
+  const numericalBool = isPublished ? 1 : 0;
+
+  try {
+    const res = await prisma.blog.update({
+      where: {
+        id: id,
+      },
+      data: {
+        title: title,
+        body: editorContent,
+        subtitle: subtitle,
+        thumbnail_url: thumbnail_url,
+        is_published: numericalBool,
+        createdDate: new Date(),
+        type: type,
+      },
+    });
+
+    return NextResponse.json({ message: "Succeeded" }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({ message: "Internal Error" }, { status: 500 });
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
 export async function DELETE(request) {
   const searchParams = request.nextUrl.searchParams;
   const id = searchParams.get("id");
