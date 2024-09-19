@@ -10,10 +10,14 @@ export async function GET(request) {
   try {
     const blogs = await prisma.blog.findMany();
 
-    return NextResponse.json(
-      { message: "Succeeded", body: blogs },
-      { status: 200 }
-    );
+    if (blogs) {
+      return NextResponse.json(
+        { message: "Succeeded", body: blogs },
+        { status: 200 }
+      );
+    } else {
+      return NextResponse.json({ message: "Not found" }, { status: 404 });
+    }
   } catch (error) {
     return NextResponse.json({ message: "Internal error" }, { status: 500 });
   } finally {

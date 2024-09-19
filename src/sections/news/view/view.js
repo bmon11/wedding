@@ -18,7 +18,8 @@ import { useResponsive } from "src/hooks/use-responsive";
 
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
-import axios, { endpoints } from "src/utils/axios";
+// import axios, { endpoints } from "src/utils/axios";
+import axiosInstance from "src/utils/axios";
 import { handleClientScriptLoad } from "next/script";
 
 export default function NewsView(params) {
@@ -30,7 +31,7 @@ export default function NewsView(params) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("/api/news/list");
+        const response = await axiosInstance.get("/api/news/list");
         setNewsData(response.data.body.reverse());
       } catch (error) {
         console.log("Error fetching data:", error);

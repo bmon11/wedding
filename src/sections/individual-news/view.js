@@ -17,6 +17,7 @@ import { useResponsive } from "src/hooks/use-responsive";
 import axios from "src/utils/axios";
 import { useRouter } from "src/routes/hooks";
 import { useAuthContext } from "src/auth/hooks";
+import axiosInstance from "src/utils/axios";
 
 export default function IndividualNewsView({ id }) {
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function IndividualNewsView({ id }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/news/${id}`);
+        const response = await axiosInstance.get(`/api/news/${id}`);
 
         console.log("response", response.data.body);
 
@@ -56,6 +57,11 @@ export default function IndividualNewsView({ id }) {
     } catch (error) {
       console.log("Error deleting data:", error);
     }
+  };
+
+  const updateData = async (e) => {
+    e.preventDefault();
+    router.replace(`/news/update?id=${id}`);
   };
 
   return (
@@ -105,20 +111,37 @@ export default function IndividualNewsView({ id }) {
               >
                 Буцах
               </Button>
-              {authenticated.authenticated && (
-                <Button
-                  sx={{
-                    marginTop: 2,
-                    color: "white",
-                    bgcolor: "red",
-                    alignSelf: "flex-end",
-                  }}
-                  variant="contained"
-                  onClick={deleteData}
-                >
-                  Устгах
-                </Button>
-              )}
+              <Box>
+                {authenticated.authenticated && (
+                  <Button
+                    sx={{
+                      marginTop: 2,
+                      color: "white",
+                      bgcolor: "orange",
+                      alignSelf: "flex-end",
+                    }}
+                    variant="contained"
+                    onClick={updateData}
+                  >
+                    Шинэчлэх
+                  </Button>
+                )}
+                {authenticated.authenticated && (
+                  <Button
+                    sx={{
+                      marginTop: 2,
+                      color: "white",
+                      bgcolor: "red",
+                      alignSelf: "flex-end",
+                      marginLeft: 1,
+                    }}
+                    variant="contained"
+                    onClick={deleteData}
+                  >
+                    Устгах
+                  </Button>
+                )}
+              </Box>
             </Box>
           </Grid>
           {mdUp && (
