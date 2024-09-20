@@ -74,6 +74,7 @@ export default function UpdateEditor(params) {
         setUrl(body.thumbnail_url);
         setIsPublished(body.is_published);
         setSubtitle(body.subtitle);
+        setEditorContent(body.body);
 
         setIsLoading(false);
       } catch (error) {
