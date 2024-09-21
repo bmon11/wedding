@@ -29,9 +29,12 @@ export default function NewsView(params) {
   const [selectedType, setSelectedType] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get("/api/news/list");
+        const response = await axiosInstance.get(
+          `/api/news?type=${selectedType}`
+        );
         setNewsData(response.data.body.reverse());
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -40,16 +43,16 @@ export default function NewsView(params) {
       }
     };
     fetchData();
-  }, []);
+  }, [selectedType]);
 
   const handeTypeClick = (type) => {
     setSelectedType(type);
   };
 
-  const filteredNewsData =
-    selectedType !== null
-      ? newsData.filter((item) => item.type === selectedType)
-      : newsData;
+  // const filteredNewsData =
+  //   selectedType !== null
+  //     ? newsData.filter((item) => item.type === selectedType)
+  //     : newsData;
 
   return (
     <MainLayout>
@@ -99,7 +102,7 @@ export default function NewsView(params) {
                   <CircularProgress />
                 </Box>
               ) : (
-                filteredNewsData.map((item) => (
+                newsData.map((item) => (
                   <HorizontalNewsCard
                     id={item.id}
                     key={item.id}

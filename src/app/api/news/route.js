@@ -7,15 +7,26 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function GET(request) {
+  const searchParams = request.nextUrl.searchParams;
+  let type = searchParams.get("type");
   try {
-    const blogs = await prisma.blog.findMany();
+    let blogs = null;
+    if (type == "null") {
+      blogs = await prisma.blog.findMany();
+    } else {
+      blogs = await prisma.blog.findMany({ where: { type: parseInt(type) } });
+    }
 
-    return NextResponse.json(
-      { message: "Succeeded", body: blogs },
-      { status: 200 }
-    );
+    if (blogs) {
+      return NextResponse.json(
+        { message: "Succeeded", body: blogs },
+        { status: 200 }
+      );
+    } else {
+      return NextResponse.json({ message: "Not found" }, { status: 404 });
+    }
   } catch (error) {
-    return NextResponse.json({ message: "Internal error" }, { status: 500 });
+    return NextResponse.json({ message: error.message }, { status: 500 });
   } finally {
     await prisma.$disconnect();
   }
