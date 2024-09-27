@@ -157,8 +157,8 @@ const EditorView = () => {
                 label="blog type"
                 onChange={handleChange}
               >
-                <MenuItem value={0}>Эрэгтэй</MenuItem>
-                <MenuItem value={1}>Эмэгтэй</MenuItem>
+                <MenuItem value={0}>Эмэгтэй</MenuItem>
+                <MenuItem value={1}>Эрэгтэй</MenuItem>
                 <MenuItem value={2}>Энтертайнмэнт</MenuItem>
                 <MenuItem value={3}>Ёс заншил</MenuItem>
               </Select>

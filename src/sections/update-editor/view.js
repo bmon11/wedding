@@ -64,7 +64,6 @@ export default function UpdateEditor(params) {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get(`/api/news/${id}`);
-
         console.log("respose", response.data.body);
         const body = response.data.body;
         setNewsData(body);
@@ -97,7 +96,10 @@ export default function UpdateEditor(params) {
       };
       const res = await fetch(`/api/news?id=${id}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+        },
         body: JSON.stringify(content),
       });
 

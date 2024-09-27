@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
 // import { isAsyncFunction } from "util/types";
+import { verifyToken } from "src/auth/context/jwt/utils";
 
 const prisma = new PrismaClient();
 
@@ -33,6 +34,12 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
+  const { valid, response, decoded } = verifyToken(request);
+
+  if (!valid) {
+    return response;
+  }
+
   const searchParams = request.nextUrl.searchParams;
   const id = parseInt(searchParams.get("id"));
   const body = await request.json();
@@ -66,6 +73,12 @@ export async function POST(request) {
 }
 
 export async function DELETE(request) {
+  const { valid, response, decoded } = verifyToken(request);
+
+  if (!valid) {
+    return response;
+  }
+
   const searchParams = request.nextUrl.searchParams;
   const id = searchParams.get("id");
   try {

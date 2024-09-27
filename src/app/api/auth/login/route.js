@@ -33,6 +33,7 @@ export async function POST(request) {
         secretKey,
         { expiresIn: "2h" }
       );
+
       return NextResponse.json(
         { message: "Succeeded", user: user.email, accessToken: accessToken },
         { status: 200 }

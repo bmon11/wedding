@@ -31,8 +31,14 @@ export default function IndividualNewsView({ id }) {
 
   useEffect(() => {
     const fetchData = async () => {
+      const token = sessionStorage.getItem("accessToken");
+
       try {
-        const response = await axiosInstance.get(`/api/news/${id}`);
+        const response = await axiosInstance.get(`/api/news/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         console.log("response", response.data.body);
 

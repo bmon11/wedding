@@ -2,15 +2,18 @@ import { PrismaClient } from "@prisma/client";
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
+import { verifyToken } from "src/auth/context/jwt/utils";
 // import { isAsyncFunction } from "util/types";
 
 const prisma = new PrismaClient();
 
-export async function GET(request) {
-  return NextResponse.json({ message: "Hello world get" }, { status: 200 });
-}
-
 export async function POST(request) {
+  const { valid, response, decoded } = verifyToken(request);
+
+  if (!valid) {
+    return response;
+  }
+
   try {
     const body = await request.json();
     const { title, editorContent, thumbnail_url, isPublished, subtitle, type } =

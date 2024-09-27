@@ -1,18 +1,22 @@
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 
-import axios from 'src/utils/axios';
+import axios from "src/utils/axios";
+import { NextResponse } from "next/server";
+import { verify } from "jsonwebtoken";
+
+const secret = process.env.JWT_SECRET;
 
 // ----------------------------------------------------------------------
 
 function jwtDecode(token) {
-  const base64Url = token.split('.')[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const base64Url = token.split(".")[1];
+  const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
   const jsonPayload = decodeURIComponent(
     window
       .atob(base64)
-      .split('')
+      .split("")
       .map((c) => `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`)
-      .join('')
+      .join("")
   );
 
   return JSON.parse(jsonPayload);
@@ -47,9 +51,9 @@ export const tokenExpired = (exp) => {
   clearTimeout(expiredTimer);
 
   expiredTimer = setTimeout(() => {
-    alert('Token expired');
+    alert("Token expired");
 
-    sessionStorage.removeItem('accessToken');
+    sessionStorage.removeItem("accessToken");
 
     window.location.href = paths.auth.jwt.login;
   }, timeLeft);
@@ -59,7 +63,7 @@ export const tokenExpired = (exp) => {
 
 export const setSession = (accessToken) => {
   if (accessToken) {
-    sessionStorage.setItem('accessToken', accessToken);
+    sessionStorage.setItem("accessToken", accessToken);
 
     axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 
@@ -67,8 +71,49 @@ export const setSession = (accessToken) => {
     const { exp } = jwtDecode(accessToken); // ~3 days by minimals server
     tokenExpired(exp);
   } else {
-    sessionStorage.removeItem('accessToken');
+    sessionStorage.removeItem("accessToken");
 
     delete axios.defaults.headers.common.Authorization;
   }
 };
+
+// ----------------------------------------------------------------------
+
+export function verifyToken(request) {
+  const authorizationHeader = request.headers.get("authorization");
+
+  if (!authorizationHeader) {
+    return {
+      valid: false,
+      response: NextResponse.json(
+        { message: "Authorization required" },
+        { status: 401 }
+      ),
+    };
+  }
+
+  const token = authorizationHeader.split(" ")[1];
+
+  if (!token || token === "null") {
+    return {
+      valid: false,
+      response: NextResponse.json(
+        { message: "Authorization required" },
+        { status: 401 }
+      ),
+    };
+  }
+
+  try {
+    const decoded = verify(token, secret);
+    return { valid: true, decoded };
+  } catch (error) {
+    return {
+      valid: false,
+      response: NextResponse.json(
+        { message: "Invalid token" },
+        { status: 401 }
+      ),
+    };
+  }
+}
