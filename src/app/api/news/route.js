@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { padEnd } from "lodash";
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
@@ -6,21 +7,38 @@ import { NextResponse } from "next/server";
 import { verifyToken } from "src/auth/context/jwt/utils";
 
 const prisma = new PrismaClient();
+const page_size = parseInt(process.env.PAGE_SIZE);
 
 export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
   let type = searchParams.get("type");
+  const page = parseInt(searchParams.get("page"));
+
   try {
-    let blogs = null;
+    let data = {};
+    let blog_count = 0;
     if (type == "null") {
-      blogs = await prisma.blog.findMany();
+      data["blogs"] = await prisma.blog.findMany({
+        skip: page * page_size,
+        take: page_size,
+      });
+      blog_count = await prisma.blog.count();
     } else {
-      blogs = await prisma.blog.findMany({ where: { type: parseInt(type) } });
+      data["blogs"] = await prisma.blog.findMany({
+        where: { type: parseInt(type) },
+        skip: page * page_size,
+        take: page_size,
+      });
+      blog_count = await prisma.blog.count({
+        where: { type: parseInt(type) },
+      });
     }
 
-    if (blogs) {
+    data["pageCount"] = Math.ceil(blog_count / page_size);
+
+    if (data["blogs"]) {
       return NextResponse.json(
-        { message: "Succeeded", body: blogs },
+        { message: "Succeeded", body: data },
         { status: 200 }
       );
     } else {

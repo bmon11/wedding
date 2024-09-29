@@ -14,28 +14,31 @@ import ListItem from "@mui/material/ListItem";
 import Button from "@mui/material/Button";
 import Image from "src/components/image/image";
 import HeroImage from "src/components/image/hero-image";
+import Pagination from "@mui/material/Pagination";
 import { useResponsive } from "src/hooks/use-responsive";
 
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
 // import axios, { endpoints } from "src/utils/axios";
 import axiosInstance from "src/utils/axios";
-import { handleClientScriptLoad } from "next/script";
 
 export default function NewsView(params) {
   const mdUp = useResponsive("up", "md");
   const [newsData, setNewsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
+  const [pagination, setPagination] = useState(1);
+  const [pageCount, setPageCount] = useState(1);
 
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get(
-          `/api/news?type=${selectedType}`
+          `/api/news?type=${selectedType}&page=${pagination - 1}`
         );
-        setNewsData(response.data.body.reverse());
+        setNewsData(response.data.body.blogs.reverse());
+        setPageCount(response.data.body.pageCount);
       } catch (error) {
         console.log("Error fetching data:", error);
       } finally {
@@ -43,16 +46,16 @@ export default function NewsView(params) {
       }
     };
     fetchData();
-  }, [selectedType]);
+  }, [selectedType, pagination]);
 
   const handeTypeClick = (type) => {
     setSelectedType(type);
+    setPagination(1);
   };
 
-  // const filteredNewsData =
-  //   selectedType !== null
-  //     ? newsData.filter((item) => item.type === selectedType)
-  //     : newsData;
+  const handlePaginationClick = (event, value) => {
+    setPagination(value);
+  };
 
   return (
     <MainLayout>
@@ -71,6 +74,9 @@ export default function NewsView(params) {
           <Box sx={{ my: 4 }}>
             <Typography variant="h5">Мэдээний төрөл</Typography>
             <List dense>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(null)}>• Бүгд</Button>
+              </ListItem>
               <ListItem>
                 <Button onClick={() => handeTypeClick(0)}>• Эмэгтэйчүүд</Button>
               </ListItem>
@@ -113,6 +119,20 @@ export default function NewsView(params) {
                   />
                 ))
               )}
+              <Box
+                my={5}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+              >
+                <Pagination
+                  shape="circular"
+                  variant="text"
+                  count={pageCount}
+                  page={pagination}
+                  onChange={handlePaginationClick}
+                />
+              </Box>
             </Stack>
           </Grid>
           {mdUp && (
@@ -122,6 +142,11 @@ export default function NewsView(params) {
                   <List dense>
                     <ListItem>
                       <Typography variant="h5">Мэдээний төрөл</Typography>
+                    </ListItem>
+                    <ListItem>
+                      <Button onClick={() => handeTypeClick(null)}>
+                        • Бүгд
+                      </Button>
                     </ListItem>
                     <ListItem>
                       <Button onClick={() => handeTypeClick(0)}>
