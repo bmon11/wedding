@@ -16,9 +16,13 @@ export default function Banner() {
     };
     fetchData();
   }, [url]);
-  return (
-    <>
-      <Image src={url} />
-    </>
-  );
+  if (url != "") {
+    return (
+      <>
+        <Image src={url} />
+      </>
+    );
+  } else {
+    return <></>;
+  }
 }

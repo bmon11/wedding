@@ -17,6 +17,7 @@ import { useResponsive } from "src/hooks/use-responsive";
 import axios from "src/utils/axios";
 import { useRouter } from "src/routes/hooks";
 import { useAuthContext } from "src/auth/hooks";
+import Banner from "src/components/banner/banner";
 import axiosInstance from "src/utils/axios";
 
 export default function IndividualNewsView({ id }) {
@@ -39,8 +40,6 @@ export default function IndividualNewsView({ id }) {
             Authorization: `Bearer ${token}`,
           },
         });
-
-        console.log("response", response.data.body);
 
         setNewsData(response.data.body);
       } catch (error) {
@@ -188,7 +187,7 @@ export default function IndividualNewsView({ id }) {
                     </List>
                   </Box>
                 </Stack>
-                <Image ratio={"9/16"} />
+                <Banner />
               </Stack>
             </Grid>
           )}
