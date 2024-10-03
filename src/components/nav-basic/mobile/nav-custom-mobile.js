@@ -14,7 +14,7 @@ import NavList from "./nav-list";
 
 // ----------------------------------------------------------------------
 
-export default function NavCustomMobile({ data }) {
+export default function NavCustomMobile({ data, slotProps }) {
   const pathname = usePathname();
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -54,14 +54,12 @@ export default function NavCustomMobile({ data }) {
           <Logo sx={{ mx: 2.5, my: 3 }} />
 
           {data.map((list) => (
-            // <NavList
-            //   key={list.title}
-            //   data={list}
-            //   depth={1}
-            //   slotProps={slotProps}
-            // />
-
-            <NavList key={list.title} data={list} />
+            <NavList
+              key={list.title}
+              depth={1}
+              data={list}
+              slotProps={slotProps}
+            />
           ))}
         </Scrollbar>
       </Drawer>

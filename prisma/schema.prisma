@@ -31,3 +31,8 @@ model Blog{
   createdDate    DateTime
   type           Int @default(0)
 }
+
+model Banner{
+  id             Int    @id @default(autoincrement())
+  url          String
+}

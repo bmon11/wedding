@@ -106,7 +106,7 @@ export default function Header() {
     {
       title: "МЭДЭЭЛЭЛ",
       path: "/news",
-      // caption: "This is the caption",
+      caption: "",
       // children: [
       //   {
       //     title: "Эмэгтэйчүүд",
@@ -137,12 +137,12 @@ export default function Header() {
     {
       title: "ИЛ ТОД БАЙДАЛ",
       path: "#",
-      // caption: "This is the caption",
+      caption: "",
       children: [
         {
           title: "Байгууллагын ил тод байдал",
           path: "/transparency",
-          // caption: "This is the caption",
+          caption: "",
           // children: [
           //   { title: "Page 1.1", path: "#" },
           //   { title: "Page 1.2", path: "#" },
@@ -151,6 +151,7 @@ export default function Header() {
         {
           title: "Санхүүгийн ил тод байдал",
           path: "https://shilendans.gov.mn/organization/58553?ry=2024",
+          caption: "",
           // children: [
           //   { title: "Page 2.1", path: "#" },
           //   { title: "Page 2.2", path: "#" },
@@ -165,14 +166,22 @@ export default function Header() {
           //   },
           // ],
         },
-        { title: "Хүний нөөцийн ил тод байдал", path: "/transparency/hr" },
-        { title: "Хууль, эрх зүй, дүрэм журам", path: "/transparency/law" },
+        {
+          title: "Хүний нөөцийн ил тод байдал",
+          path: "/transparency/hr",
+          caption: "",
+        },
+        {
+          title: "Хууль, эрх зүй, дүрэм журам",
+          path: "/transparency/law",
+          caption: "",
+        },
       ],
     },
     {
       title: "ХОЛБОО БАРИХ",
-      path: "#",
-      // caption: "This is the caption",
+      path: "/contact",
+      caption: "",
       // children: [
       //   {
       //     title: "Захиалга өгөх",

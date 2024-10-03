@@ -56,7 +56,6 @@ export default function UpdateEditor(params) {
     setIsPublished(!isPublished);
   };
   const handleChange = (e) => {
-    console.log("e is ", e);
     setType(e.target.value);
   };
 

@@ -10,9 +10,7 @@ export default function StructurePage(params) {
   return (
     <MainLayout>
       <HeroImage
-        imgURL={
-          "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
-        }
+        imgURL={"/assets/images/home/hero/TUY_0011.jpg"}
         description={""}
         title={""}
       />
@@ -31,12 +29,7 @@ export default function StructurePage(params) {
           >
             Байгууллагын бүтэц
           </Typography>
-          <Image
-            src={
-              "/assets/images/hr/hr.png"
-            }
-            ratio={"16/9"}
-          />
+          <Image src={"/assets/images/hr/hr.png"} ratio={"16/9"} />
         </Box>
       </Container>
     </MainLayout>

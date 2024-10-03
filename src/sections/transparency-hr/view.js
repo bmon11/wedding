@@ -5,6 +5,7 @@ import HeroImageService from "src/components/image/hero-image-service";
 import { Typography, Container } from "@mui/material";
 import Members from "src/components/member-grid/members";
 import { caligraphicFont } from "src/theme/typography";
+import Image from "src/components/image/image";
 const data = [
   {
     id: 0,
@@ -72,9 +73,7 @@ export default function TransparencyHR(params) {
   return (
     <MainLayout>
       <HeroImageService
-        imgURL={
-          "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
-        }
+        imgURL={"/assets/images/home/hero/TUY_0011.jpg"}
         description={
           "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style."
         }
@@ -90,7 +89,7 @@ export default function TransparencyHR(params) {
           Хүний нөөцийн ил тод байдал
         </Typography>
 
-        <Typography variant="body1" textAlign={"justify"}>
+        {/* <Typography variant="body1" textAlign={"justify"}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -99,8 +98,8 @@ export default function TransparencyHR(params) {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </Typography>
-        <br />
-        <Typography variant="body1" textAlign={"justify"} mb={5}>
+        <br /> */}
+        {/* <Typography variant="body1" textAlign={"justify"} mb={5}>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
@@ -115,7 +114,8 @@ export default function TransparencyHR(params) {
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur
         </Typography>
-        <Members data={data} />
+        <Members data={data} /> */}
+        <Image src={"/assets/images/hr/hunii-nuutsiin-il-tod-baidal.png"} />
       </Container>
     </MainLayout>
   );

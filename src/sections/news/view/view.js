@@ -16,6 +16,7 @@ import Image from "src/components/image/image";
 import HeroImage from "src/components/image/hero-image";
 import Pagination from "@mui/material/Pagination";
 import { useResponsive } from "src/hooks/use-responsive";
+import Banner from "src/components/banner/banner";
 
 // Section for main image
 // Main section 2/3 of page is a column of main news, on right banner, types,
@@ -60,9 +61,7 @@ export default function NewsView(params) {
   return (
     <MainLayout>
       <HeroImage
-        imgURL={
-          "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
-        }
+        imgURL={"/assets/images/home/hero/TUY_0011.jpg"}
         description={
           "The starting point for your next project with Minimal UI Kit, built on the newest version of Material-UI ©, ready to be customized to your style."
         }
@@ -75,21 +74,18 @@ export default function NewsView(params) {
             <Typography variant="h5">Мэдээний төрөл</Typography>
             <List dense>
               <ListItem>
-                <Button onClick={() => handeTypeClick(null)}>• Бүгд</Button>
+                <Button onClick={() => handeTypeClick(0)}>• Ёс заншил</Button>
               </ListItem>
               <ListItem>
-                <Button onClick={() => handeTypeClick(0)}>• Эмэгтэйчүүд</Button>
-              </ListItem>
-              <ListItem>
-                <Button onClick={() => handeTypeClick(1)}>• Эрчүүд</Button>
-              </ListItem>
-              <ListItem>
-                <Button onClick={() => handeTypeClick(2)}>
-                  • Энтертайнмэнт
+                <Button onClick={() => handeTypeClick(1)}>
+                  • Гэрлэх ёслол
                 </Button>
               </ListItem>
               <ListItem>
-                <Button onClick={() => handeTypeClick(3)}>• Ёс заншил</Button>
+                <Button onClick={() => handeTypeClick(2)}>• Хурим найр</Button>
+              </ListItem>
+              <ListItem>
+                <Button onClick={() => handeTypeClick(null)}>• Бүгд</Button>
               </ListItem>
             </List>
           </Box>
@@ -144,28 +140,23 @@ export default function NewsView(params) {
                       <Typography variant="h5">Мэдээний төрөл</Typography>
                     </ListItem>
                     <ListItem>
-                      <Button onClick={() => handeTypeClick(null)}>
-                        • Бүгд
-                      </Button>
-                    </ListItem>
-                    <ListItem>
                       <Button onClick={() => handeTypeClick(0)}>
-                        • Эмэгтэйчүүд
+                        • Ёс заншил
                       </Button>
                     </ListItem>
                     <ListItem>
                       <Button onClick={() => handeTypeClick(1)}>
-                        • Эрчүүд
+                        • Гэрлэх ёслол
                       </Button>
                     </ListItem>
                     <ListItem>
                       <Button onClick={() => handeTypeClick(2)}>
-                        • Энтертайнмэнт
+                        • Хурим найр
                       </Button>
                     </ListItem>
                     <ListItem>
-                      <Button onClick={() => handeTypeClick(3)}>
-                        • Ёс заншил
+                      <Button onClick={() => handeTypeClick(null)}>
+                        • Бүгд
                       </Button>
                     </ListItem>
                   </List>
@@ -179,16 +170,17 @@ export default function NewsView(params) {
                       </ListItem>
                       <ListItem>
                         <Typography>
-                          • УБ хот, ЧД, 1-р хороо, Шангрилла оффис, 15 давхар
+                          УБ хот, Сүхбаатар дүүрэг, 1-р хороо, П.Гэндэнгийн
+                          гудамж
                         </Typography>
                       </ListItem>
                       <ListItem>
-                        <Typography>• Утас: "(+976)77777777"</Typography>
+                        <Typography>Утас: "(+976)11320515"</Typography>
                       </ListItem>
                     </List>
                   </Box>
                 </Stack>
-                <Image />
+                <Banner />
               </Stack>
             </Grid>
           )}

@@ -12,6 +12,7 @@ export const paths = {
   contact: "/contact",
   faqs: "/faqs",
   order: "/maintenance",
+  edit: "/edit",
   // AUTH
   auth: {
     jwt: {

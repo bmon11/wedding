@@ -18,8 +18,8 @@ export default function NewsItem() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosInstance.get("/api/news?type=null");
-        setNewsData(response.data.body.reverse());
+        const response = await axiosInstance.get("/api/news?type=null&page=0");
+        setNewsData(response.data.body.blogs.reverse());
       } catch (error) {
         console.log("Error fetching data:", error);
       }

@@ -10,9 +10,7 @@ export default function RentView(params) {
   return (
     <MainLayout>
       <HeroImageService
-        imgURL={
-          "https://images.adsttc.com/media/images/5f17/35c7/b357/65da/b000/0006/large_jpg/TGWM_065_DC76368_L.jpg?1595356596"
-        }
+        imgURL={"/assets/images/home/hero/TUY_0011.jpg"}
         description={"Гэрлэх ёслолын ордны зааланд фото, дүрс бичлэг авахуулах"}
         title={"ТҮРЭЭСИЙН ҮЙЛЧИЛГЭЭ"}
       />
