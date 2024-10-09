@@ -63,7 +63,6 @@ export default function UpdateEditor(params) {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get(`/api/news/${id}`);
-        console.log("respose", response.data.body);
         const body = response.data.body;
         setNewsData(body);
 
@@ -101,8 +100,6 @@ export default function UpdateEditor(params) {
         },
         body: JSON.stringify(content),
       });
-
-      console.log(res);
 
       if (res.status === 200) {
         router.replace(`/news/${id}`);

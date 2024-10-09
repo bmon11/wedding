@@ -3,9 +3,9 @@ import { PrismaClient } from "@prisma/client";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
+import prisma from "../../../../utils/db";
 // import { isAsyncFunction } from "util/types";
 
-const prisma = new PrismaClient();
 const secretKey = process.env.JWT_SECRET;
 
 export async function GET(request) {

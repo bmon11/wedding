@@ -52,7 +52,6 @@ const EditorView = () => {
     setIsPublished(!isPublished);
   };
   const handleChange = (e) => {
-    console.log("e is ", e);
     setType(e.target.value);
   };
 
@@ -69,14 +68,15 @@ const EditorView = () => {
       };
       const res = await fetch("/api/createNews", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("accessToken")}`,
+        },
         body: JSON.stringify(content),
       });
 
-      console.log(res);
-
       // use Router to push to all news
-      if (res.ok) {
+      if (res.status === 200) {
         router.replace("/news");
       }
     } catch (error) {

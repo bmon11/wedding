@@ -2,8 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { orderBy } from "lodash";
 import { NextResponse } from "next/server";
 import { verifyToken } from "src/auth/context/jwt/utils";
-
-const prisma = new PrismaClient();
+import prisma from "../../../utils/db";
 
 export async function GET(request) {
   try {
@@ -36,8 +35,6 @@ export async function POST(request) {
 
   const body = await request.json();
   const { bannerUrl } = body;
-
-  console.log(body);
 
   try {
     const newBanner = await prisma.Banner.create({

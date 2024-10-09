@@ -23,7 +23,6 @@ export default function ChangeBannerView(params) {
     try {
       const response = await axiosInstance.post("/api/banner", { bannerUrl });
 
-      console.log(response);
       if (response.status === 200) {
         router.replace("/news");
       }

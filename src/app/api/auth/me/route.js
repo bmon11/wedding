@@ -3,8 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import jwt from "jsonwebtoken";
 // import { isValidToken } from "src/auth/context/jwt/utils";
 import { jwtDecode } from "src/auth/context/jwt/utils";
-
-const prisma = new PrismaClient();
+import prisma from "../../../../utils/db";
 
 export async function GET(request) {
   const token = request.headers.get("Authorization")?.split(" ")[1];

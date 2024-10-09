@@ -4,8 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { verifyToken } from "src/auth/context/jwt/utils";
 // import { isAsyncFunction } from "util/types";
-
-const prisma = new PrismaClient();
+import prisma from "../../../utils/db";
 
 export async function POST(request) {
   const { valid, response, decoded } = verifyToken(request);

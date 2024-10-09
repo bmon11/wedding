@@ -65,9 +65,9 @@ export default function HorizontalNewsCard({
           </CardContent>
         </Card>
       ) : (
-        <Card>
-          {<Image src={imgURL} ratio={"1/1"} />}
-          <CardContent sx={{ flex: "1 0 auto" }}>
+        <Card sx={{ width: "90vw" }}>
+          {<Image src={imgURL} ratio={"16/9"} />}
+          <CardContent sx={{ flex: "1 0 auto", width: "100%" }}>
             <Typography
               variant="subtitle1"
               color="text.secondary"

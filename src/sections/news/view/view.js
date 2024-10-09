@@ -38,7 +38,7 @@ export default function NewsView(params) {
         const response = await axiosInstance.get(
           `/api/news?type=${selectedType}&page=${pagination - 1}`
         );
-        setNewsData(response.data.body.blogs.reverse());
+        setNewsData(response.data.body.blogs);
         setPageCount(response.data.body.pageCount);
       } catch (error) {
         console.log("Error fetching data:", error);

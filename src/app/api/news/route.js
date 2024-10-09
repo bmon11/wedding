@@ -1,12 +1,12 @@
 import { PrismaClient } from "@prisma/client";
-import { padEnd } from "lodash";
+import { orderBy, padEnd } from "lodash";
 // import { getServerSession } from "next-auth/next";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
 // import { isAsyncFunction } from "util/types";
 import { verifyToken } from "src/auth/context/jwt/utils";
+import prisma from "../../../utils/db";
 
-const prisma = new PrismaClient();
 const page_size = parseInt(process.env.PAGE_SIZE);
 
 export async function GET(request) {
@@ -21,6 +21,7 @@ export async function GET(request) {
       data["blogs"] = await prisma.blog.findMany({
         skip: page * page_size,
         take: page_size,
+        orderBy: { id: "desc" },
       });
       blog_count = await prisma.blog.count();
     } else {
@@ -28,6 +29,7 @@ export async function GET(request) {
         where: { type: parseInt(type) },
         skip: page * page_size,
         take: page_size,
+        orderBy: { id: "desc" },
       });
       blog_count = await prisma.blog.count({
         where: { type: parseInt(type) },

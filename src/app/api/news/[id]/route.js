@@ -4,8 +4,7 @@ import { set } from "lodash";
 // import { authOptions } from "./auth/[...nextauth]";
 import { NextResponse } from "next/server";
 // import { isAsyncFunction } from "util/types";
-
-const prisma = new PrismaClient();
+import prisma from "../../../../utils/db";
 
 export async function GET(request, { params }) {
   const { id } = params;

@@ -107,7 +107,6 @@ export function AuthProvider({ children }) {
     };
 
     const response = await axios.post(endpoints.auth.login, data);
-    console.log(response.data);
 
     const { accessToken, user } = response.data;
 
