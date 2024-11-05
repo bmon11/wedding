@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `blog` ADD COLUMN `type` INTEGER NULL DEFAULT 0;
